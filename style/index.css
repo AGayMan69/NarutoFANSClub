@@ -1,0 +1,41 @@
+:root {
+    --clr-home-earth-rgb: 74, 45, 1;
+    --clr-home-fire-rgb: 39, 0, 0;
+    --clr-home-wind-rgb: 74, 45, 1;
+    --clr-home-lightning-rgb: 82, 69, 1;
+    --clr-home-water-rgb: 0, 33, 64;
+}
+
+body {
+    /*background-color: rgba(var(--clr-global-earth-rgb), 0.8);*/
+}
+
+.earth,
+.fire,
+.water,
+.lightning,
+.wind {
+    background-color: rgba(var(--clr-panel-color), 0.7);
+    position: sticky;
+    top: 0;
+}
+
+.water {
+    --clr-panel-color: var(--clr-home-water-rgb);
+}
+
+.wind {
+    --clr-panel-color: var(--clr-home-wind-rgb);
+}
+
+.fire {
+    --clr-panel-color: var(--clr-home-fire-rgb);
+}
+
+.earth {
+    --clr-panel-color: var(--clr-home-earth-rgb);
+}
+
+.lightning {
+    --clr-panel-color: var(--clr-home-lightning-rgb);
+}
