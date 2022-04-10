@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/ramen.css">
+    <title>Ramen</title>
 </head>
 <body>
+<header>
+    <nav class="nav-container">
+        <div class="logo"><img src="./asset/naruto-icon-14697.svg" alt="" class="logo__image svg">
+
+            <div class="logo__text">naruto</div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="index.html" class="nav__link">Home</a></li>
+            <li><a href="character.html" class="nav__link">Character</a></li>
+            <li><a href="movie.html" class="nav__link">Movie</a></li>
+            <li><a href="ramen.html" class="nav__link">Ramen</a></li>
+        </ul>
+        <button class="hamburger-toggle svg"><img src="./asset/hamburger.svg" alt=""></button>
+    </nav>
+</header>
+<main>
+    <div></div>
+    <div class="ramen-page-container">
+        <form method="post" enctype="multipart/form-data">
+    <fieldset class="ramen">
+        <legend class="ramen-logo">Ramen ラーメン</legend>
+        <div class="ramen-list">
+        <ul class="ramen-type">
+            <li><img src="./asset/ramen/Hakata%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Hakata Ramen   $HKD 79</div>
+                <input type="checkbox" class="hakata-ramen" value="Hakata"  />
+            </li>
+            <li><img src="./asset/ramen/Miso%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Miso Ramen  $HKD59</div>
+
+                    <input type="checkbox" class="miso-ramen" value="Miso">
+
+            </li>
+            <li><img src="./asset/ramen/Sauce%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Sauce Ramen  $HKD65</div>
+                <input type="checkbox" class="sauce-ramen" value="Sauce">
+
+            </li>
+            <li><img src="./asset/ramen/Shio%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Shio Ramen  $HKD59</div>
+            </li>
+            <li><img src="./asset/ramen/Super%20Spicy%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Super Spicy Ramen  $HKD79</div>
+            </li>
+            <li><img src="./asset/ramen/Tonkotsu%20Ramen.png" alt="" class="ramen-image">
+                <div class="ramen-info">Tonkotsu Ramen  $HKD65</div>
+            </li>
+        </ul>
+        </div>
+    </fieldset>
+            <fieldset class="alcarte">
+                <legend class="ala-logo">A la carte アラカルト</legend>
+                <div class="ala-list"></div>
+                <ul>
+                    <input type="checkbox" class="ala-type" value="plus-noodle">
+                    <li><div class="ala-name">Plus Noodles </div></li>
+                    <li><div class="ala-name">Char Siew</div></li>
+                    <li><div class="ala-name">Zephyr Onion</div></li>
+                    <li><div class="ala-name">Kimchi</div></li>
+                    <li><div class="ala-name">Tonkatsu</div></li>
+                    <li><div class="ala-name">Deep Fried Saffron Balls</div></li>
+                    <li><div class="ala-name">Handmade Japanese Fried Chicken</div></li>
+                    <li><div class="ala-name">Lemon Chicken Wicker</div></li>
+                    <li><div class="ala-name">Flax Season Vegetables</div></li>
+                    <li><div class="ala-name">Japanese Fried Shrimp</div></li>
+                    <li><div class="ala-name">Signature Fried Tofu</div></li>
+                    <li><div class="ala-name">Japanese Tempura</div></li>
+                    <li><div class="ala-name">Japanese Croquette</div></li>
+                    <li><div class="ala-name">Soft-boiled Egg </div></li>
+                    <li><div class="ala-name">Vegetable Tempura</div></li>
+                </ul>
+            </fieldset>
+        </form>
+
+    </div>
+</main>
+
 
 </body>
 </html>
