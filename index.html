@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Title</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/index.css">
     <script src="./nav.js" defer></script>
+    <script src="./src/index.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="">
         <nav class="nav-container">
             <div class="logo"><img src="./asset/naruto-icon-14697.svg" alt="" class="logo__image svg">
 
@@ -28,139 +30,151 @@
         </nav>
     </header>
     <main>
-        <div>
-        </div>
-        <div class="section-container">
-            <section class="homepage-section welcome">
-                <div class="slider">
-                    <button class="slider__button prev">&#8249;</button>
-                    <button class="slider__button prev">&#8250;</button>
-                    <ul>
-                        <li><img src="./asset/home/banner1_exp.png" alt="" class="silde__image">
-                            <div class="slide__overlay"><h1>this is naruto fans club</h1></div>
-                        </li>
-                        <li><img src="./asset/home/banner2_exp.png" alt="" class="slide__image">
-                            <div class="slide__overlay"><h1>Naruto <span>narrates the life and adventage of ninja</span>
-                            </h1></div>
-                        </li>
-                        <li><img src="./asset/home/banner3_exp.png" alt="" class="slide__image">
-                            <div class="silde_overlay"><h1>ready to explore</h1></div>
-                        </li>
-                    </ul>
+        <section class="homepage-section welcome">
+            <div class="slider">
+                <div class="slide" data-active><img src="./asset/home/banner1_exp.png" alt="" class="silde__image">
+                    <div class="slide__overlay">
+                        <h1>this is</h1>
+                        <h1>naruto</h1>
+                        <h1>fans club</h1>
+                    </div>
                 </div>
-            </section>
-            <section class="homepage-section chakra">
+                <div class="slide"><img src="./asset/home/banner2_exp.png" alt="" class="slide__image">
+                    <div class="slide__overlay">
+                        <h1>Naruto</h1>
+                        <h1>narrates the life and adventure of ninja</h1>
+
+                    </div>
+                </div>
+                <div class="slide"><img src="./asset/home/banner3_exp.png" alt="" class="slide__image">
+                    <div class="slide__overlay">
+                        <h1>ready</h1>
+                        <h1>to</h1>
+                        <h1>explore</h1>
+                    </div>
+                </div>
+                <button class="slider__button prev" data-silder-button="prev">&#8249;</button>
+                <button class="slider__button next" data-silder-button="next">&#8250;</button>
+            </div>
+        </section>
+        <section class="homepage-section chakra">
+            <div class="chakra-wrapper">
                 <article>
-                    <h1 class="chakra__title"></h1>
-                    <p class="chakra_text"></p>
+                    <h1 class="chakra__title">Chakra
+                        <span>チャクラ</span></h1>
+                    <p class="chakra_text">Chakra is essential to even the most basic jutsu. Through various methods,
+                        the most common of which is hand seals, chakra can be controlled and manipulated to create an
+                        effect that would not be possible otherwise, such as walking on water, exhaling fire, or
+                        creating illusions. </p>
                 </article>
                 <video class="chakra__video" src="./asset/home/video/chakra.mp4" autoplay muted loop>
                 </video>
-            </section>
-            <section class="homepage-section ninjutsu">
-                <div class="ninjutsu__panel water">
-                    <div class="panel__icon">水</div>
-                    <h1 class="panel_title">水遁<span>Water Release</span></h1>
-                    <p class="panel_description">Water Release jutsu are most easily performed using existing water
-                        sources,
-                        such as lakes or rivers. Users can also create water within their bodies with chakra, which they
-                        expel from their mouths, though this is generally regarded as a testament of skill; Tobirama
-                        Senju's
-                        ability to produce his own water is noted to be proof of his position as Hokage.</p>
+            </div>
+        </section>
+        <section class="homepage-section ninjutsu">
+            <div class="ninjutsu__panel water">
+                <div class="panel__icon">水</div>
+                <h1 class="panel_title">水遁<span>Water Release</span></h1>
+                <p class="panel_description">Water Release jutsu are most easily performed using existing water
+                    sources,
+                    such as lakes or rivers. Users can also create water within their bodies with chakra, which they
+                    expel from their mouths, though this is generally regarded as a testament of skill; Tobirama
+                    Senju's
+                    ability to produce his own water is noted to be proof of his position as Hokage.</p>
+            </div>
+            <div class="ninjutsu__panel wind">
+                <div class="panel__icon">風</div>
+                <h2 class="panel_title">風遁<span>Wind Release</span></h2>
+                <p class="panel_description">Wind Release is the rarest of the five nature transformations,[1] but
+                    those
+                    who can use it are able to cut through anything.[2] Asuma Sarutobi uses it by channelling wind
+                    chakra into his Chakra Blades, making the blades far sharper and giving them greater reach.</p>
+            </div>
+            <div class="ninjutsu__panel fire">
+                <div class="panel__icon">火</div>
+                <h2 class="panel_title">火遁<span>Fire Release</span></h2>
+                <p class="panel_description">Fire Release is almost always used offensively, typically by kneading
+                    chakra in the body into flames that the user breathes from the mouth.[1] Simpler applications of
+                    Fire Release include creating a stream of fire, or alternatively breaking the stream into bursts
+                    of
+                    flames.</p>
+            </div>
+            <div class="ninjutsu__panel earth">
+                <div class="panel__icon">土</div>
+                <h2 class="panel_title">土遁Earth Release</h2>
+                <p class="panel_description">Earth Release encompasses any earthen material, from dirt to stone to
+                    clay,
+                    and in fact often entails changing one to another. For most Earth Release jutsu, users place
+                    their
+                    hands on the ground and use their chakra to alter its form</p>
+            </div>
+            <div class="ninjutsu__panel lightning">
+                <div class="panel__icon">雷</div>
+                <h2 class="panel_title">雷遁<span>Lightning Release</span></h2>
+                <p class="panel_description">In order to perform most Lightning Release jutsu, users must convert
+                    their
+                    chakra into electricity.[1] One of the simpler ways to use this electricity is to channel it
+                    into
+                    ninja tools, increasing the weapon's cutting power by making it vibrate or causing a numbing
+                    effect
+                    to those the weapons contact.</p>
+            </div>
+        </section>
+        <section class="homepage-section countries">
+            <article>
+                <h1 class="countries__title">countries</h1>
+                <p class="countries__text">Countries operate as separate political entities and are presumably all
+                    monarchies, ruled by daimyō who stand as a ruler for the entire country. Hidden Village heads
+                    are
+                    the generals that take care of shinobi matters. The Naruto world is similar to feudal Japan in
+                    many
+                    aspects; those countries maintain balance between themselves through nothing but power. Treaties
+                    are
+                    periodically signed, but they are generally not worth much more than the paper they are written
+                    on.</p>
+            </article>
+            <img src="./asset/home/countries.png" alt="" class="countries__img">
+        </section>
+        <section class="homepage-section kage">
+            <h1 class="kage__title">KAGE<span>影</span></h1>
+            <div class="kage_content">
+                <div class="character"><img src="./asset/home/kage/gaara.png" alt="" class="character__image">
+                    <h3 class="character__name">Gaara<br>我愛羅</h3>
+                    <div class="character__kage">Kazekage</div>
                 </div>
-                <div class="ninjutsu__panel wind">
-                    <div class="panel__icon">風</div>
-                    <h2 class="panel_title">風遁<span>Wind Release</span></h2>
-                    <p class="panel_description">Wind Release is the rarest of the five nature transformations,[1] but
-                        those
-                        who can use it are able to cut through anything.[2] Asuma Sarutobi uses it by channelling wind
-                        chakra into his Chakra Blades, making the blades far sharper and giving them greater reach.</p>
+                <div class="character"><img src="./asset/home/kage/tsunade.png" alt="" class="character__image">
+                    <h3 class="character__name">Tsunade<br>綱手</h3>
+                    <div class="character__kage">Hokage</div>
                 </div>
-                <div class="ninjutsu__panel fire">
-                    <div class="panel__icon">火</div>
-                    <h2 class="panel_title">火遁<span>Fire Release</span></h2>
-                    <p class="panel_description">Fire Release is almost always used offensively, typically by kneading
-                        chakra in the body into flames that the user breathes from the mouth.[1] Simpler applications of
-                        Fire Release include creating a stream of fire, or alternatively breaking the stream into bursts
-                        of
-                        flames.</p>
+                <div class="character"><img src="./asset/home/kage/mei.png" alt="" class="character__image">
+                    <h3 class="character__name">Mei Terumī<br>照美</h3>
+                    <div class="character__kage">Mizukage</div>
                 </div>
-                <div class="ninjutsu__panel earth">
-                    <div class="panel__icon">土</div>
-                    <h2 class="panel_title">土遁Earth Release</h2>
-                    <p class="panel_description">Earth Release encompasses any earthen material, from dirt to stone to
-                        clay,
-                        and in fact often entails changing one to another. For most Earth Release jutsu, users place
-                        their
-                        hands on the ground and use their chakra to alter its form</p>
+                <div class="character"><img src="./asset/home/kage/a.png" alt="" class="character__image">
+                    <h3 class="character__name">A<br>エー</h3>
+                    <div class="character__kage">Raikage</div>
                 </div>
-                <div class="ninjutsu__panel lightning">
-                    <div class="panel__icon">雷</div>
-                    <h2 class="panel_title">雷遁<span>Lightning Release</span></h2>
-                    <p class="panel_description">In order to perform most Lightning Release jutsu, users must convert
-                        their
-                        chakra into electricity.[1] One of the simpler ways to use this electricity is to channel it
-                        into
-                        ninja tools, increasing the weapon's cutting power by making it vibrate or causing a numbing
-                        effect
-                        to those the weapons contact.</p>
+                <div class="character"><img src="./asset/home/kage/onoki.png" alt="" class="character__image">
+                    <h3 class="character__name">Ōnoki<br>オオノキ</h3>
+                    <div class="character__kage">Tsuchikage</div>
                 </div>
-            </section>
-            <section class="homepage-section countries">
-                <article>
-                    <h1 class="countries__title">countries</h1>
-                    <p class="countries__text">Countries operate as separate political entities and are presumably all
-                        monarchies, ruled by daimyō who stand as a ruler for the entire country. Hidden Village heads
-                        are
-                        the generals that take care of shinobi matters. The Naruto world is similar to feudal Japan in
-                        many
-                        aspects; those countries maintain balance between themselves through nothing but power. Treaties
-                        are
-                        periodically signed, but they are generally not worth much more than the paper they are written
-                        on.</p>
-                </article>
-                <img src="./asset/home/countries.png" alt="" class="countries__img">
-            </section>
-            <section class="homepage-section kage">
-                <h1 class="kage__title">KAGE<span>影</span></h1>
-                <div class="kage_content">
-                    <div class="character"><img src="./asset/home/kage/gaara.png" alt="" class="character__image">
-                        <h3 class="character__name">Gaara<br>我愛羅</h3>
-                        <div class="character__kage">Kazekage</div>
-                    </div>
-                    <div class="character"><img src="./asset/home/kage/tsunade.png" alt="" class="character__image">
-                        <h3 class="character__name">Tsunade<br>綱手</h3>
-                        <div class="character__kage">Hokage</div>
-                    </div>
-                    <div class="character"><img src="./asset/home/kage/mei.png" alt="" class="character__image">
-                        <h3 class="character__name">Mei Terumī<br>照美</h3>
-                        <div class="character__kage">Mizukage</div>
-                    </div>
-                    <div class="character"><img src="./asset/home/kage/a.png" alt="" class="character__image">
-                        <h3 class="character__name">A<br>エー</h3>
-                        <div class="character__kage">Raikage</div>
-                    </div>
-                    <div class="character"><img src="./asset/home/kage/onoki.png" alt="" class="character__image">
-                        <h3 class="character__name">Ōnoki<br>オオノキ</h3>
-                        <div class="character__kage">Tsuchikage</div>
-                    </div>
-                </div>
-            </section>
-            <section class="homepage-section tail-beast">
-                <article>
-                    <h1 class="tail-beast__title">TAILED<br>BEAST
-                        <span>尾獣</span>
-                    </h1>
-                    <p class="tail-beast__description">Long before the founding of the hidden villages, the Sage of Six
-                        Paths saved the world by sealing the Ten-Tails into his body, becoming its jinchūriki. Some time
-                        later, the Sage was inspired by his youngest son, Asura, to use his Creation of All Things
-                        ability
-                        to divide the Ten-Tails' chakra into nine living entities, what would become the tailed
-                        beasts.</p>
-                </article>
-                <img src="./asset/home/tailbeast.png" alt="" class="tail-beast__img">
-            </section>
-        </div>
+            </div>
+        </section>
+        <section class="homepage-section tail-beast">
+            <article>
+                <h1 class="tail-beast__title">TAILED<br>BEAST
+                    <span>尾獣</span>
+                </h1>
+                <p class="tail-beast__description">Long before the founding of the hidden villages, the Sage of Six
+                    Paths saved the world by sealing the Ten-Tails into his body, becoming its jinchūriki. Some time
+                    later, the Sage was inspired by his youngest son, Asura, to use his Creation of All Things
+                    ability
+                    to divide the Ten-Tails' chakra into nine living entities, what would become the tailed
+                    beasts.</p>
+            </article>
+            <img src="./asset/home/tailbeast.png" alt="" class="tail-beast__img">
+        </section>
+
         <section class="homepage-section jinchuriki">
             <div class="jinchuriki__container">
                 <div class="character">

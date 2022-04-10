@@ -10,14 +10,193 @@ body {
     /*background-color: rgba(var(--clr-global-earth-rgb), 0.8);*/
 }
 
+.homepage-section:not(:first-child):not(:last-child):not(:nth-child(3)) {
+    display: flex;
+    width: min(70vw, 2800px);
+    margin-inline: auto;
+}
+
+/*section */
+/*setting*/
+
+.homepage-section.welcome {
+    aspect-ratio: 16 / 9;
+}
+
+.slider {
+    position: relative;
+    aspect-ratio: inherit;
+}
+
+.slide {
+    --clr: var(--clr-global-white);
+    --fs: 10rem;
+    --tsha: none;
+    --fw: fw-h1;
+    position: absolute;
+    display: block;
+    inset: 0;
+    opacity: 0;
+    font-weight: var(--fw);
+    font-size: var(--fs);
+    color: var(--clr);
+    text-shadow: var(--tsha);
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 300ms;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.slide__overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: inherit;
+    text-shadow: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    inset: 0;
+}
+
+.slide__overlay h1 {
+    font-size: var(--fs);
+    text-shadow: var(--tsha);
+    color: var(--clr);
+}
+
+/*=============================*/
+/*        welcome section*/
+/*=============================*/
+/*banner 1 style*/
+.slide:nth-child(1) {
+    --clr: var(--clr-global-white);
+    --tsha: 0.00em 0.05em var(--clr-global-orange);
+    --fs: 7rem;
+    text-transform: capitalize;
+    letter-spacing: 0.001em;
+}
+
+.slide:nth-child(1) h1:nth-child(2) {
+    --tsha: 0.02em 0.03em var(--clr-global-white);
+    --clr: var(--clr-global-orange);
+}
+
+.slide:nth-child(1) .slide__overlay {
+    inset: 0 auto 0 50%;
+    align-items: flex-start;
+}
+
+/*banner 2 style */
+.slide:nth-child(2) {
+    --clr: var(--clr-global-orange);
+    --tsha: 0.02em 0.06em var(--clr-global-black);
+    text-transform: uppercase;
+}
+
+.slide:nth-child(2) h1:nth-child(2) {
+    --fs: 2rem;
+    --tsha: 0.02em 0.04em var(rgba(var(--clr-hamburger-black), 0.5));
+    --clr: var(--clr-global-white);
+    text-transform: none;
+}
+
+/*banner 3 style*/
+.slide:nth-child(3) {
+    --clr: var(--clr-global-white);
+    --tsha: 0.02em 0.06em var(--clr-global-orange);
+    text-transform: uppercase;
+}
+
+.slide:nth-child(3) h1:nth-child(2) {
+    --clr: var(--clr-global-orange);
+    --fs: 6rem;
+    --tsha: 0.02em 0.04em var(--clr-global-white);
+    text-transform: none;
+}
+
+.slider__button {
+    --clr: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    z-index: 2;
+    color: var(--clr);
+    font-size: clamp(2rem, 9vw + 1rem, 100rem);
+    /*font-size: 10rem;*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+    top: 0;
+    bottom: 0;
+    padding-inline: 0.4em;
+    /*background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);*/
+}
+
+.slider__button:focus,
+.slider__button:hover {
+    --clr: rgba(255, 255, 255, 0.8);
+}
+
+.slider__button.next {
+    right: 0;
+}
+
+/*=============================*/
+/*        chakra section*/
+/*=============================*/
+section.chakra {
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.chakra .chakra-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 10em;
+}
+
+.chakra .chakra-wrapper {
+    outline: 1px solid red;
+}
+
+.chakra article {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.chakra__title {
+    font-size: clamp(1rem, 8vw + 0.1rem, 10rem);
+    color: var(--clr-global-blue);
+    text-shadow: 0.02em 0.06em 0.06em rgba(var(--clr-global-aqurablue-rgb));
+    line-height: 1;
+}
+
+.chakra__title > span {
+    display: block;
+    font-size: 0.1em;
+    text-align: center;
+}
+
+.chakra__video {
+    aspect-ratio: 15.5 / 9;
+    /*height: fit-content;*/
+    border-radius: 2.5rem;
+}
+
+/*=============================*/
+/*        ninjutsu section*/
+/*=============================*/
 .earth,
 .fire,
 .water,
 .lightning,
 .wind {
     background-color: rgba(var(--clr-panel-color), 0.7);
-    position: sticky;
-    top: 0;
 }
 
 .water {
@@ -38,4 +217,20 @@ body {
 
 .lightning {
     --clr-panel-color: var(--clr-home-lightning-rgb);
+}
+
+/*=============================*/
+/*        countries section*/
+/*=============================*/
+
+.homepage-section.countries {
+    outline: 3px solid red;
+    place-items: center;
+    height: 30vh;
+    gap: 10em;
+    position: relative;
+}
+
+.countries__img {
+    aspect-ratio: 1;
 }
