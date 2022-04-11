@@ -210,35 +210,88 @@ section.chakra {
 /*        ninjutsu section*/
 /*=============================*/
 .ninjutsu {
+    /*display: none;*/
+    display: flex;
+    height: 100vh;
+}
+
+.ninjutsu > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    color: var(--clr-global-white);
+}
+
+.ninjutsu__panel {
+    position: relative;
+}
+
+.ninjutsu__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(var(--clr-panel-color), 0.7);
+    /*z-index: -1;*/
+}
+
+.panel__overlay-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel__overlay-wrapper > * {
+    flex-grow: 1;
+}
+
+.panel__overlay-wrapper .panel__icon {
+    /*border: 2px solid black;*/
+    display: flex;
+}
+
+.panel__overlay-wrapper .panel__icon span {
+    border: 2px solid blue;
+    margin: auto;
+    font-size: 10rem;
+    padding: 0.2em;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.panel__overlay-wrapper .panel_title {
     display: none;
 }
 
-.earth,
-.fire,
-.water,
-.lightning,
-.wind {
-    background-color: rgba(var(--clr-panel-color), 0.7);
+.panel__overlay-wrapper .panel_description {
+    display: none;
 }
 
 .water {
     --clr-panel-color: var(--clr-home-water-rgb);
+    background: url("../asset/home/water.png");
 }
 
 .wind {
     --clr-panel-color: var(--clr-home-wind-rgb);
+    background-size: cover;
+    background: url("../asset/home/wind.png") no-repeat;
 }
 
 .fire {
     --clr-panel-color: var(--clr-home-fire-rgb);
+    background: url("../asset/home/fire.png");
 }
 
 .earth {
     --clr-panel-color: var(--clr-home-earth-rgb);
+    background: url("../asset/home/earth.png");
 }
 
 .lightning {
     --clr-panel-color: var(--clr-home-lightning-rgb);
+    background: url("../asset/home/lightning.png");
 }
 
 /*=============================*/
@@ -442,11 +495,15 @@ section.chakra {
     display: grid;
     gap: 10em;
     grid-template-columns: repeat(3, 1fr);
+    padding-block: 3%;
+    align-items: center;
 }
 
 .jinchuriki__container-wrapper .character {
     overflow: hidden;
     aspect-ratio: 6 / 13;
+    position: relative;
+    transition: 2000ms opacity ease-in-out;
 }
 
 .jinchuriki__container-wrapper .character__image {
@@ -457,5 +514,86 @@ section.chakra {
 
 .jinchuriki__container-wrapper .character__name {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-lr;
+    color: var(--clr-global-white);
+    font-weight: var(--fw-bold);
+    font-size: 5rem;
+    white-space: nowrap;
 }
 
+.jinchuriki__container-wrapper .character__name span {
+    writing-mode: lr;
+    font-size: 0.25em;
+    line-height: 2;
+    font-weight: var(--fw-bold-semi);
+}
+
+.jinchuriki__container-wrapper .character::before {
+    --color: 240, 240, 240;
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.jinchuriki__container-wrapper .character:hover .character__name {
+    opacity: 0;
+}
+
+.jinchuriki__container-wrapper .character:hover::before {
+    opacity: 0;
+}
+
+.jinchuriki__container-wrapper .character:nth-child(1) {
+    transform: translateY(-10%);
+}
+
+.jinchuriki__container-wrapper .character:nth-child(3) {
+    transform: translateY(10%);
+}
+
+/*=============================*/
+/*         swar section*/
+/*=============================*/
+
+.homepage-section.swar {
+    height: 100vh;
+    position: relative;
+}
+
+.homepage-section.swar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.swar .swar__overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-global-white);
+}
+
+.swar .swar__title {
+    font-size: 8rem;
+    line-height: 1;
+}
+
+.swar .swar__title > span {
+    display: block;
+    font-size: 0.2em;
+}
+
+.swar .swar__description {
+    margin-top: 2em;
+}
+
+.swar .swar__video {
+    width: 100%;
+    height: 100%;
+}
