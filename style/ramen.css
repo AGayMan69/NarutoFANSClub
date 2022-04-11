@@ -3,8 +3,23 @@
     --clr-ramen: #F5E4C0;
     --clr-alacarte: #F0E5CF;
     --clr-drink: #E3F3E3;
-    --clr-money: #EDE9D0；
+    --clr-money: #EDE9D0;
+    --clr-header:   #F0E5CF;
 }
 body{
     background: var(--clr-ramenbackground);
+}
+input, textarea {
+    border:1px solid orange;
+}
+ul{
+    list-style: none;
+}
+header {
+    --background: var(--clr-header) !important;
+}
+
+.info {
+    background: white;
+    border-radius: 10px;
 }
