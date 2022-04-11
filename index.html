@@ -14,7 +14,7 @@
     <script src="./src/index.js" defer></script>
 </head>
 <body>
-    <header class="">
+    <header>
         <nav class="nav-container">
             <div class="logo"><img src="./asset/naruto-icon-14697.svg" alt="" class="logo__image svg">
 
@@ -30,9 +30,9 @@
         </nav>
     </header>
     <main>
-        <section class="homepage-section welcome">
+        <section class="homepage-section welcome fullsize">
             <div class="slider">
-                <div class="slide" data-active><img src="./asset/home/banner1_exp.png" alt="" class="silde__image">
+                <div class="slide" data-active><img src="./asset/home/banner1_exp.png" alt="" class="slide__image">
                     <div class="slide__overlay">
                         <h1>this is</h1>
                         <h1>naruto</h1>
@@ -71,63 +71,82 @@
                 </video>
             </div>
         </section>
-        <section class="homepage-section ninjutsu">
+        <section class="homepage-section ninjutsu fullsize">
             <div class="ninjutsu__panel water">
                 <div class="panel__overlay-wrapper">
                     <div class="panel__icon"><span>水</span></div>
-                    <h1 class="panel_title">水遁<span>Water Release</span></h1>
-                    <p class="panel_description">Water Release jutsu are most easily performed using existing water
-                        sources,
-                        such as lakes or rivers. Users can also create water within their bodies with chakra, which they
-                        expel from their mouths, though this is generally regarded as a testament of skill; Tobirama
-                        Senju's
-                        ability to produce his own water is noted to be proof of his position as Hokage.</p>
+                    <div class="ninjutsu-article"><h1 class="panel_title">水遁<span>Water Release</span></h1>
+                        <p class="panel_description">Water Release jutsu are most easily performed using existing water
+                            sources,
+                            such as lakes or rivers. Users can also create water within their bodies with chakra, which
+                            they
+                            expel from their mouths, though this is generally regarded as a testament of skill; Tobirama
+                            Senju's
+                            ability to produce his own water is noted to be proof of his position as Hokage.</p>
+                    </div>
                 </div>
+                <img src="./asset/home/water.png" alt="" class="panel__photo">
             </div>
-            <div class="ninjutsu__panel wind">
+            <div class="ninjutsu__panel wind ">
                 <div class="panel__overlay-wrapper">
                     <div class="panel__icon"><span>風</span></div>
-                    <h2 class="panel_title">風遁<span>Wind Release</span></h2>
-                    <p class="panel_description">Wind Release is the rarest of the five nature transformations,[1] but
-                        those
-                        who can use it are able to cut through anything.[2] Asuma Sarutobi uses it by channelling wind
-                        chakra into his Chakra Blades, making the blades far sharper and giving them greater reach.</p>
+                    <div class="ninjutsu-article"><h1 class="panel_title">風遁<span>Wind Release</span></h1>
+                        <p class="panel_description">Wind Release is the rarest of the five nature transformations,[1]
+                            but
+                            those
+                            who can use it are able to cut through anything.[2] Asuma Sarutobi uses it by channelling
+                            wind
+                            chakra into his Chakra Blades, making the blades far sharper and giving them greater
+                            reach.</p>
+                    </div>
                 </div>
+                <img src="./asset/home/wind.png" alt="" class="panel__photo">
             </div>
-            <div class="ninjutsu__panel fire">
+            <div class="ninjutsu__panel fire ">
                 <div class="panel__overlay-wrapper">
                     <div class="panel__icon"><span>火</span></div>
-                    <h2 class="panel_title">火遁<span>Fire Release</span></h2>
-                    <p class="panel_description">Fire Release is almost always used offensively, typically by kneading
-                        chakra in the body into flames that the user breathes from the mouth.[1] Simpler applications of
-                        Fire Release include creating a stream of fire, or alternatively breaking the stream into bursts
-                        of
-                        flames.</p>
+                    <div class="ninjutsu-article"><h1 class="panel_title">火遁<span>Fire Release</span></h1>
+                        <p class="panel_description">Fire Release is almost always used offensively, typically by
+                            kneading
+                            chakra in the body into flames that the user breathes from the mouth.[1] Simpler
+                            applications of
+                            Fire Release include creating a stream of fire, or alternatively breaking the stream into
+                            bursts
+                            of
+                            flames.</p>
+                    </div>
                 </div>
+                <img src="./asset/home/fire.png" alt="" class="panel__photo">
             </div>
-            <div class="ninjutsu__panel earth">
+            <div class="ninjutsu__panel earth ">
                 <div class="panel__overlay-wrapper">
                     <div class="panel__icon"><span>土</span></div>
-                    <h2 class="panel_title">土遁Earth Release</h2>
-                    <p class="panel_description">Earth Release encompasses any earthen material, from dirt to stone to
-                        clay,
-                        and in fact often entails changing one to another. For most Earth Release jutsu, users place
-                        their
-                        hands on the ground and use their chakra to alter its form</p>
+                    <div class="ninjutsu-article"><h1 class="panel_title">土遁<span>Earth Release</span></h1>
+                        <p class="panel_description">Earth Release encompasses any earthen material, from dirt to stone
+                            to
+                            clay,
+                            and in fact often entails changing one to another. For most Earth Release jutsu, users place
+                            their
+                            hands on the ground and use their chakra to alter its form</p>
+                    </div>
                 </div>
+                <img src="./asset/home/earth.png" alt="" class="panel__photo">
             </div>
             <div class="ninjutsu__panel lightning">
                 <div class="panel__overlay-wrapper">
                     <div class="panel__icon"><span>雷</span></div>
-                    <h2 class="panel_title">雷遁<span>Lightning Release</span></h2>
-                    <p class="panel_description">In order to perform most Lightning Release jutsu, users must convert
-                        their
-                        chakra into electricity.[1] One of the simpler ways to use this electricity is to channel it
-                        into
-                        ninja tools, increasing the weapon's cutting power by making it vibrate or causing a numbing
-                        effect
-                        to those the weapons contact.</p>
+                    <div class="ninjutsu-article"><h1 class="panel_title">雷遁<span>Lightning Release</span></h1>
+                        <p class="panel_description">In order to perform most Lightning Release jutsu, users must
+                            convert
+                            their
+                            chakra into electricity.[1] One of the simpler ways to use this electricity is to channel it
+                            into
+                            ninja tools, increasing the weapon's cutting power by making it vibrate or causing a numbing
+                            effect
+                            to those the weapons contact.</p>
+                    </div>
                 </div>
+                <img src="./asset/home/lightning.png" alt="" class="panel__photo">
             </div>
         </section>
         <section class="homepage-section countries">
@@ -190,7 +209,6 @@
                 <img src="./asset/home/tailbeast.png" alt="" class="tail-beast__img">
             </div>
         </section>
-
         <section class="homepage-section jinchuriki">
             <div class="jinchuriki__header">
                 <h1 class="jinchuriki__title">Jinchūriki<span>人柱力</span></h1>
@@ -213,7 +231,7 @@
                 </div>
             </div>
         </section>
-        <section class="homepage-section swar">
+        <section class="homepage-section swar fullsize">
             <video src="./asset/home/video/WAR.mp4" class="swar__video" autoplay loop muted></video>
             <div class="swar__overlay">
                 <h1 class="swar__title">Shinobi War<span>忍界大戦</span></h1>
