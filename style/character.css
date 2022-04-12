@@ -1,0 +1,94 @@
+:root {
+    --clr-naruto: #B76A45;
+    --clr-sasuke: #414151;
+    --clr-kakashi: #A3948D;
+    --clr-jiraiya: #A75158;
+    --clr-itachi: #322626;
+}
+
+.character-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 17%;
+    --clr-background: grey;
+    color: var(--clr-global-white);
+    background: var(--clr-background);
+    padding-inline: 7vw;
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    height: 100vh;
+}
+
+.chakra-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.character__title {
+    font-size: 5rem;
+    letter-spacing: 0.2ch;
+    line-height: 1;
+    grid-column: 1/4;
+}
+
+.character__title > span {
+    display: block;
+    font-size: 0.3em;
+    letter-spacing: normal;
+}
+
+.character__cv {
+    font-size: 2.5rem;
+    margin-top: 0.9em;
+    padding: 0.2em;
+    display: inline-block;
+    background: var(--clr-global-black);
+    grid-column: 1/4;
+}
+
+.character__description {
+    width: 100%;
+    min-width: unset;
+    margin-block: 2em;
+}
+
+.character__pics {
+    aspect-ratio: 8/19;
+    grid-column: 5/6;
+    order: 2;
+    width: 30vw;
+    object-fit: scale-down;
+    filter: drop-shadow(0.4em 1em 0.2em rgba(0, 0, 0, 0.5));
+}
+
+.character__image-container {
+    display: flex;
+    gap: 9%;
+    grid-column: 1/4;
+}
+
+.character__image-container img {
+    aspect-ratio: 16/9;
+    border: 0.1em solid var(--clr-global-white);
+    box-shadow: 0.1em 0.1em 0.5em black;
+}
+
+.character-container.naruto {
+    --clr-background: var(--clr-naruto);
+}
+
+.character-container.sasuke {
+    --clr-background: var(--clr-sasuke);
+}
+
+.character-container.kakashi {
+    --clr-background: var(--clr-kakashi);
+}
+
+.character-container.jiraiya {
+    --clr-background: var(--clr-jiraiya);
+}
+
+.character-container.itachi {
+    --clr-background: var(--clr-itachi);
+}
