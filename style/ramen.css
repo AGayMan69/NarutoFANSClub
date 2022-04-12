@@ -5,12 +5,18 @@
     --clr-drink: #E3F3E3;
     --clr-money: #EDE9D0;
     --clr-header:   #F0E5CF;
+    --clr-information: #C0A48B;
 }
+
 body{
     background: var(--clr-ramenbackground);
+    font-family: 'Carter One', serif;
 }
+
 input, textarea {
     border:1px solid orange;
+    padding: 0.8em;
+    background: white;
 }
 ul{
     list-style: none;
@@ -21,5 +27,46 @@ header {
 
 .info {
     background: white;
+    border-radius: 10px;
+    /*font-size: clamp(1rem);*/
+}
+.logo {
+    text-transform: uppercase;
+
+}
+.total{
+    display: grid;
+}
+.ramen-type {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid purple;
+    background: var(--clr-ramen);
+    padding: 2em;
+}
+.ramen-image, .ramen-info {
+    display: grid;
+    padding: 2em;
+}
+.ala-list {
+    display: grid;
+    background: var(--clr-alacarte);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1em;
+}
+
+
+.drink-list {
+    display: grid;
+    background: var(--clr-drink);
+}
+.input-info {
+    display: grid;
+    background: var(--clr-information);
+    padding: 1em;
+}
+.submit{
+    background: orangered;
+    color: white;
     border-radius: 10px;
 }
