@@ -67,7 +67,7 @@ button {
     cursor: pointer;
 }
 
-input, button, textarea {
+button {
     outline: none;
     border: none;
     background: none;
