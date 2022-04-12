@@ -1,0 +1,65 @@
+/*header {*/
+/*transform: translateY(-100%);*/
+/*}*/
+.movies-container {
+    background: url("../asset/movie/tile_background.png");
+    background-size: 5%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5em 15em;
+    padding-top: 20vh;
+    padding-inline: 13vw;
+}
+
+.movies-container::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.movie {
+    position: relative;
+    /*z-index: 1;*/
+    width: 100%;
+}
+
+.movie__link {
+    width: inherit;
+    box-shadow: 0.5em 1em 0.6em black;
+    --image-ratio: 2/3;
+}
+
+.movie__link::before {
+    content: '';
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    aspect-ratio: var(--image-ratio);
+    transition: 200ms opacity ease-in-out;
+}
+
+.movie__image {
+    aspect-ratio: var(--image-ratio);
+}
+
+.movie__title {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold-semi);
+    color: var(--clr-global-white);
+    margin-block: 0.5em;
+}
+
+.movie__year {
+    font-size: 1.3rem;
+    color: var(--clr-global-grey);
+    font-weight: var(--fw-medium);
+}
+
+.movie__link:hover::before {
+    opacity: 1;
+}

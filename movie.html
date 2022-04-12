@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Movie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/movie.css">
+    <script src="./nav.js" defer></script>
+    <script src="./src/movie.js" defer></script>
 </head>
 <body>
+    <header class="scrolled">
+        <nav class="nav-container">
+            <div class="logo"><img src="./asset/naruto-icon-14697.svg" alt="" class="logo__image svg">
 
+                <div class="logo__text">naruto</div>
+            </div>
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="character.html" class="nav__link">Character</a></li>
+                <li><a href="movie.html" class="nav__link">Movie</a></li>
+                <li><a href="ramen.html" class="nav__link">Ramen</a></li>
+            </ul>
+            <button class="hamburger-toggle svg"><img src="./asset/hamburger.svg" alt=""></button>
+        </nav>
+    </header>
+    <main>
+        <div class="movies-container">
+            <div class="movie">
+                <a href="" class="movie__link">
+                    <img src="" alt="" class="movie__image">
+                </a>
+                <div class="movie__title"></div>
+                <div class="movie__year"></div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
