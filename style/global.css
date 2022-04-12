@@ -107,7 +107,7 @@ header {
     top: 0;
     justify-content: space-between;
     width: 100vw;
-    padding: 2em 4em;
+    padding: 0.75em 4em;
     z-index: 9998;
     background: var(--background);
 }
@@ -159,7 +159,7 @@ header {
 
 .nav__link {
     color: var(--text);
-    font-size: clamp(1rem, 2.5vw + 0.1rem, 1.75rem);
+    font-size: 1.5em;
 }
 
 .nav__link:hover {

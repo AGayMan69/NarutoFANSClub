@@ -35,7 +35,7 @@ function activateNavigation() {
             }
         })
 
-    }, {threshold: 0.99})
+    }, {threshold: [0.9, 0.99]})
 
     const aniObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
