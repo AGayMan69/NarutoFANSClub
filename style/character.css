@@ -26,7 +26,7 @@
 
 .character__title {
     font-size: 5rem;
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.15ch;
     line-height: 1;
     grid-column: 1/4;
 }
@@ -91,4 +91,28 @@
 
 .character-container.itachi {
     --clr-background: var(--clr-itachi);
+}
+
+.dotnav-container {
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 5%;
+    top: 50%;
+    position: fixed;
+    gap: 2em;
+}
+
+.dotnav-container .dotnav-link {
+    aspect-ratio: 1;
+    width: 2.3rem;
+    background: #BBBBBB;
+    border-radius: 100%;
+    transition: 250ms transform ease;
+}
+
+.dotnav-container .dotnav-link.selected {
+    background: var(--clr-global-white);
+    transform: scale(1.2);
 }
