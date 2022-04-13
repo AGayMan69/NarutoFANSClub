@@ -1,3 +1,6 @@
+/*====================================================================*/
+/*            home styling*/
+/*====================================================================*/
 :root {
     --clr-home-earth-rgb: 74, 45, 1;
     --clr-home-fire-rgb: 39, 0, 0;
@@ -15,11 +18,11 @@ p {
     width: min(90vw, 2800px);
     margin-inline: auto;
     align-items: center;
-    outline: 3px solid purple;
 }
 
-/*section */
-/*setting*/
+/*====================================================================*/
+/*            section styling*/
+/*====================================================================*/
 
 .homepage-section.welcome {
     height: 100vh;
@@ -85,7 +88,7 @@ p {
 .slide:nth-child(1) {
     --clr: var(--clr-global-white);
     --tsha: 0.00em 0.05em var(--clr-global-orange);
-    --fs: 11rem;
+    --fs: clamp(3rem, 8vw + 2rem, 11rem);
     text-transform: capitalize;
     letter-spacing: -0.10ch;
 }
@@ -108,25 +111,26 @@ p {
 }
 
 .slide:nth-child(2) {
-    --fs: 20rem;
+    --fs: clamp(6rem, 15vw + 1rem, 20rem);
 }
 
 .slide:nth-child(2) h1 span {
     display: block;
-    font-size: 0.1em;
+    font-size: 0.15em;
     color: var(--clr-global-white);
     text-transform: none;
 }
 
 /*banner 3 style*/
 .slide:nth-child(3) {
+    --fs: clamp(5rem, 8vw + 1rem, 10rem);
     --clr: var(--clr-global-white);
     --tsha: 0.02em 0.06em var(--clr-global-orange);
     text-transform: uppercase;
 }
 
 .slide:nth-child(3) h1:nth-child(2) {
-    --fs: 6rem;
+    --fs: 0.5em;
     text-transform: none;
 }
 
@@ -148,14 +152,10 @@ p {
     position: absolute;
     z-index: 2;
     color: var(--clr);
-    font-size: clamp(2rem, 9vw + 1rem, 100rem);
-    /*font-size: 10rem;*/
-    /*top: 50%;*/
-    /*transform: translateY(-50%);*/
+    font-size: clamp(4rem, 9vw + 1rem, 10rem);
     top: 0;
     bottom: 0;
     padding-inline: 0.4em;
-    /*background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);*/
 }
 
 .slider__button:focus,
@@ -176,8 +176,10 @@ section.chakra {
 
 .chakra .chakra-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-grow: 1;
+    flex-wrap: wrap;
+    gap: min(7rem, 10%);
 }
 
 .chakra .chakra-wrapper > * {
@@ -187,11 +189,11 @@ section.chakra {
 .chakra article {
     display: inline-flex;
     flex-direction: column;
-    /*flex: 1;*/
+    flex-grow: 0;
 }
 
 .chakra__title {
-    font-size: 11rem;
+    font-size: clamp(6rem, 8vw + 1rem, 11rem);
     color: var(--clr-global-blue);
     text-shadow: 0.02em 0.06em 0.06em rgba(var(--clr-global-aqurablue-rgb));
     line-height: 1;
@@ -203,20 +205,24 @@ section.chakra {
     text-align: center;
 }
 
+.chakra_text {
+    min-width: unset;
+    width: min(100%, 70vw);
+}
+
 .chakra__video {
     flex-grow: 1;
     aspect-ratio: 15.5 / 9;
-    /*height: fit-content;*/
-    max-width: 60rem;
     height: auto;
     border-radius: 2.5rem;
+    max-width: 55rem;
+    min-width: 30.3rem;
 }
 
 /*=============================*/
 /*        ninjutsu section*/
 /*=============================*/
 .ninjutsu {
-    /*display: none;*/
     display: flex;
     height: 100vh;
 }
@@ -286,7 +292,7 @@ section.chakra {
     background-color: var(--clr-panel-color);
     border: 0.1em solid white;
     margin: auto;
-    font-size: 8rem;
+    font-size: min(6vw, 8rem);
     font-weight: var(--fw-medium);
     text-shadow: var(--shad);
     box-shadow: 0 0.08em rgb(var(--clr-panel-color));
@@ -295,13 +301,8 @@ section.chakra {
     border-radius: 50%;
 }
 
-/*.panel__overlay-wrapper .panel_title, .panel__overlay-wrapper .panel_description {*/
-/*    display: none;*/
-/*}*/
-
-
 .ninjutsu__panel .panel_title {
-    font-size: 8rem;
+    font-size: min(8rem, 8vw);
     text-align: center;
 }
 
@@ -375,10 +376,10 @@ section.chakra {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: auto;
-    outline: 1px solid red;
+    margin-block: auto;
     gap: 10rem;
     flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .countries-wrapper > * {
@@ -388,6 +389,7 @@ section.chakra {
 .countries__img {
     aspect-ratio: 16/ 9;
     max-width: 49rem;
+    min-width: 37.6vw;
     flex-grow: 1;
     height: auto;
 }
@@ -395,7 +397,7 @@ section.chakra {
 .countries__title {
     color: #C39C92;
     text-transform: capitalize;
-    font-size: 10rem;
+    font-size: clamp(4rem, 7vw + 1rem, 10rem);
 }
 
 .countries__text {
@@ -410,6 +412,7 @@ section.chakra {
     justify-content: center;
     background: var(--clr-global-lightlightyellow);
     border-radius: 5em;
+    gap: min(5em, 5vw);
 }
 
 .kage-wrapper {
@@ -435,7 +438,7 @@ section.chakra {
 .kage__content {
     display: grid;
     grid-template-columns:
-    repeat(5, 1fr);
+            repeat(auto-fit, minmax(10.6rem, 1fr));
     gap: 3rem;
     width: 100%;
 }
@@ -445,7 +448,6 @@ section.chakra {
     display: flex;
     flex-direction: column;
     height: 100%;
-    outline: 1px solid blue;
 }
 
 .kage__content .character__image {
@@ -482,12 +484,11 @@ section.chakra {
 .tail-beast-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
-    outline: 2px solid blue;
-    gap: 20rem;
+    gap: min(20rem, 15%);
 }
 
 .tail-beast-wrapper > * {
@@ -498,7 +499,7 @@ section.chakra {
     position: relative;
     text-align: center;
     color: var(--clr-global-darkbrown);
-    font-size: 9rem;
+    font-size: clamp(5rem, 9vw + 0.5rem, 9rem);
     padding-inline: 0.40em;
     margin-bottom: 0.2em;
 }
@@ -516,7 +517,6 @@ section.chakra {
     flex-grow: 1;
     border-radius: 3em;
     max-width: 55rem;
-    max-height: 55rem;
 }
 
 /*=============================*/
@@ -545,7 +545,7 @@ section.chakra {
     margin: auto;
     text-align: center;
     color: var(--clr-global-greybrown);
-    font-size: 8rem;
+    font-size: clamp(4rem, 7vw + 0.5rem, 8rem);
     line-height: 0.95;
 }
 
@@ -556,14 +556,17 @@ section.chakra {
 }
 
 .jinchuriki__container {
-    background: url("../asset/home/bijuu.png");
+    background: url("../asset/home/bijuu.png") no-repeat center;
+    background-size: cover;
+    flex-grow: 4 !important;
+    display: flex;
 }
 
 .jinchuriki__container-wrapper {
-    width: 60%;
+    width: min(70rem, 60%);
     margin-inline: auto;
     display: grid;
-    gap: 10em;
+    gap: min(10em, 3vw);
     grid-template-columns: repeat(3, 1fr);
     padding-block: 3%;
     align-items: center;
@@ -579,7 +582,6 @@ section.chakra {
 .jinchuriki__container-wrapper .character__image {
     aspect-ratio: 6 / 13;
     object-position: center top;
-    /*position: absolute;*/
 }
 
 .jinchuriki__container-wrapper .character__name {
@@ -618,11 +620,11 @@ section.chakra {
 }
 
 .jinchuriki__container-wrapper .character:nth-child(1) {
-    transform: translateY(-9%);
+    transform: translateY(-8%);
 }
 
 .jinchuriki__container-wrapper .character:nth-child(3) {
-    transform: translateY(9%);
+    transform: translateY(8%);
 }
 
 /*=============================*/
@@ -650,7 +652,7 @@ section.chakra {
 }
 
 .swar .swar__title {
-    font-size: 8rem;
+    font-size: clamp(4rem, 9vw + 0.1rem, 8rem);
     line-height: 1;
 }
 
@@ -664,6 +666,148 @@ section.chakra {
 }
 
 .swar .swar__video {
-    width: 100%;
     height: 100%;
 }
+
+/*====================================================================*/
+/*            responsive styling*/
+/*====================================================================*/
+
+@media only screen and (max-width: 1280px ) {
+
+    /*=============================*/
+    /*         welcome section*/
+    /*=============================*/
+    .slide:nth-child(1) .slide__overlay {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .slide:nth-child(2) {
+
+    }
+
+    /*=============================*/
+    /*         countries section*/
+    /*=============================*/
+    .homepage-section.countries {
+        height: unset;
+    }
+
+    .countries-wrapper {
+        justify-content: center;
+        margin-block: max(4rem, 10vw);
+        gap: min(10rem, 12vw);
+    }
+
+    .countries-wrapper article {
+        flex-grow: 1;
+        max-width: 80%;
+    }
+
+    .countries-wrapper .countries__img {
+        max-width: 80%;
+    }
+
+    /*=============================*/
+    /*         kage section*/
+    /*=============================*/
+    .homepage-section.kage {
+        height: unset;
+    }
+
+    .kage__title {
+        margin-top: 1em;
+    }
+
+    /*=============================*/
+    /*         tailbeast section*/
+    /*=============================*/
+    .homepage-section.tail-beast {
+        height: auto;
+    }
+
+    .tail-beast-wrapper {
+        flex-wrap: wrap;
+        gap: min(10rem, 10vw);
+    }
+
+    .tail-beast-wrapper article {
+        flex-grow: 1;
+    }
+
+    .tail-beast__img {
+        min-width: 50vw;
+    }
+
+    /*=============================*/
+    /*         jinchuriki section*/
+    /*=============================*/
+    .homepage-section.jinchuriki {
+        /*height: 150vh;*/
+    }
+
+    .jinchuriki__container-wrapper .character:nth-child(1) {
+        transform: none;
+    }
+
+    .jinchuriki__container-wrapper .character:nth-child(3) {
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+    /*=============================*/
+    /*         ninjutsu section*/
+    /*=============================*/
+    section.chakra {
+        height: 100vh;
+    }
+
+    .chakra article {
+        flex-grow: 1;
+        margin-bottom: 5%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .chakra__title {
+        margin-bottom: 0.4em;
+
+    }
+
+    /*=============================*/
+    /*         ninjutsu section*/
+    /*=============================*/
+    .ninjutsu {
+        flex-direction: column;
+    }
+
+    .panel__overlay-wrapper {
+        flex-direction: column;
+    }
+
+    .ninjutsu__panel.active .panel__icon > span {
+        font-size: max(4rem, 12vw);
+    }
+
+    .panel__overlay-wrapper .panel_title {
+        writing-mode: vertical-lr;
+        white-space: nowrap;
+    }
+
+    .panel__overlay-wrapper .panel_title > span {
+        writing-mode: lr;
+        display: unset;
+    }
+
+}
+
