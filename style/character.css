@@ -9,7 +9,7 @@
 .character-container {
     display: flex;
     justify-content: space-around;
-    gap: 17%;
+    gap: 10%;
     --clr-background: grey;
     color: var(--clr-global-white);
     background: var(--clr-background);
@@ -115,4 +115,23 @@
 .dotnav-container .dotnav-link.selected {
     background: var(--clr-global-white);
     transform: scale(1.2);
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .character__pics {
+        display: none;
+    }
+
+    .dotnav-container {
+        flex-direction: row;
+        inset: unset;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dotnav-container .dotnav-link {
+        width: 1.5rem;
+    }
 }
