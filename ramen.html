@@ -26,15 +26,11 @@
     </nav>
 </header>
 <main>
-    <div class="total">
-        <div class="total-list">
-        <div class="total-money">Total $HKD:</div>
-        </div>
-    </div>
 
-    <form method="post" enctype="multipart/form-data" class="ramen-container">
-    <fieldset class="ramen">
-        <legend class="ramen-logo">Ramen ラーメン</legend>
+
+    <form method="post" enctype="multipart/form-data" class="ramen-form">
+    <fieldset class="ramen-container">
+        <h1 class="ramen-logo">Ramen ラーメン</h1>
         <ul class="ramen-type">
             <li><img src="./asset/ramen/Hakata%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r1">Hakata Ramen   $HKD 79</label>
@@ -67,7 +63,7 @@
     </fieldset>
 
             <fieldset class="alcarte">
-                <legend class="ala-logo">A la carte アラカルト</legend>
+                <h1 class="ala-logo">A la carte アラカルト</h1>
                 <ul class="ala-list">
 
                     <li><input type="checkbox" class="ala" value="ala-noodle" id="a1">
@@ -133,7 +129,7 @@
                 </ul>
             </fieldset>
         <fieldset class="drink">
-            <legend class="drink-logo">Drinks 飲み物</legend>
+            <h1 class="drink-logo">Drinks 飲み物</h1>
             <ul class="drink-list">
                 <li><input type="checkbox" class="drink" value="cola" id="d1">
                     <label class="drink-info" for="d1">Cola   $11</label>
@@ -153,8 +149,14 @@
             </ul>
 
         </fieldset>
+        <div class="total">
+            <div class="total-list">
+                <div class="total-money">Total $HKD:</div>
+                <div></div>
+            </div>
+        </div>
         <fieldset class="information">
-            <legend class="infor-logo">Information インフォメーション</legend>
+            <h1 class="infor-logo">Information インフォメーション</h1>
             <div class="input-info">
             <label class="infor" for="i1">Contact Name:</label>
             <input type="text" name="username" id="i1" class="info"/>
