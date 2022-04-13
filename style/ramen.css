@@ -2,7 +2,9 @@
     --clr-ramenbackground: #E8DCAC;
     --clr-ramen: #F5E4C0;
     --clr-alacarte: #F0E5CF;
+    --clr-alacarte-text: #DC5D31 ;
     --clr-drink: #E3F3E3;
+    --clr-drink-text: #002140;
     --clr-money: #EDE9D0;
     --clr-header:   #F0E5CF;
     --clr-information: #C0A48B;
@@ -12,6 +14,9 @@ body{
     background: var(--clr-ramenbackground);
 }
 
+input, textarea {
+    background: white;
+}
 
 input[type='checkbox']{
     border:1px solid orange;
@@ -20,9 +25,7 @@ input[type='checkbox']{
     max-height: 1em;
     max-width: 1em;
 }
-input[type="checkbox"]:checked+ label:before {
-    content: '';
-}
+
 input[type='number']{
     border: 0.5px solid grey;
     max-width: 3.5ch;
@@ -32,6 +35,8 @@ input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
     opacity: 1;
 }
+
+
 textarea{
     border: 1px solid orange;
 
@@ -54,11 +59,7 @@ header {
     --background: var(--clr-header) !important;
 }
 
-.info, .ala, .drink, .ramen {
-    background: white;
-    border-radius: 10px;
-    /*font-size: clamp(1rem);*/
-}
+
 h1 {
     text-transform: uppercase;
     font-family: 'Carter One', serif;
@@ -90,6 +91,7 @@ h1 {
     width: 25vw;
     border-radius: 1em;
     padding: 1.5em;
+    background: gainsboro;
 }
 .ramen-type {
     display: grid;
@@ -107,6 +109,7 @@ h1 {
     padding: 1em;
     border: 1px solid orange;
     border-radius: 1em;
+    font-size: 2rem;
 }
 .ramen-form{
     display: flex;
@@ -125,8 +128,8 @@ h1 {
     border-radius: 20px;
     padding-inline: 1em;
     padding-block: 1em;
-
 }
+
 
 .ala-list, .drink-list, .input-info {
     display: grid;
@@ -151,10 +154,13 @@ h1 {
     gap: 0.5em;
     font-size: 2rem;
 }
+/*.ala-info{*/
+/*    color: var(--clr-alacarte-text);*/
+/*}*/
 
 .drink{
     background: var(--clr-drink);
-    padding: 0.5em;
+    border-radius: 20px;
     padding-inline: 1em;
     padding-block: 1em;
 }
@@ -165,11 +171,22 @@ h1 {
 }
 .drink-list li {
     font-size: 1.5rem;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
-
+.drink-info{
+    color: var(--clr-drink-text);
+}
+.information {
+    background: var(--clr-information);
+    padding-inline: 1em;
+    padding-block: 1em;
+    border-radius: 20px;
+}
 .input-info {
     display: grid;
-    background: var(--clr-information);
     padding: 1em;
 }
 
@@ -191,8 +208,17 @@ input.submit {
     .ala-list li {
         font-size: 1rem;
     }
+    .drink-list{
+        grid-template-columns: repeat(auto-fit, minmax(12rem ,1fr));;
+    }
+    .drink-list li {
+        font-size: 1rem;
+    }
     .ramen-type {
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+    .ramen-type li{
+        font-size: 1rem;
     }
 }
 
