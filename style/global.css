@@ -195,8 +195,8 @@ header.scrolled {
     .logo {
         justify-content: center;
         display: flex;
-        padding-block: 0.75em;
-        font-size: clamp(3rem, 3vw + 0.5rem, 6rem);
+        padding-block: 0.25em;
+        font-size: clamp(2.7rem, 3vw + 0.5rem, 6rem);
         background: var(--background);
         position: relative;
     }
@@ -234,7 +234,7 @@ header.scrolled {
         position: absolute;
         width: 3em;
         aspect-ratio: 1;
-        top: 2.75rem;
+        top: 1.55rem;
         left: 2.75rem;
         right: 2rem;
         z-index: 9999;
