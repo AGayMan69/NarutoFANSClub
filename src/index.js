@@ -1,3 +1,35 @@
+function activatePage() {
+    const sections = document.querySelectorAll('.homepage-section');
+    const navbar = document.querySelector('header');
+
+    const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains("fullsize"))
+                    navbar.classList.remove("scrolled")
+                else
+                    navbar.classList.add("scrolled")
+            }
+        })
+    }, {threshold: [0.9, 0.99]})
+
+    const aniObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate")
+                observer.unobserve(entry.target)
+            }
+        })
+    }, {threshold: 0.5})
+
+
+    Array.from(sections).forEach(section => {
+        navObserver.observe(section)
+        aniObserver.observe(section)
+    })
+
+}
+
 function activateSlider() {
     const buttons = document.querySelectorAll("[data-silder-button]")
 
@@ -21,65 +53,47 @@ function activateSlider() {
     })
 }
 
-function activateNavigation() {
-    const sections = document.querySelectorAll('.homepage-section');
-    const navbar = document.querySelector('header');
-
-    const navObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target.classList.contains("fullsize"))
-                    navbar.classList.remove("scrolled")
-                else
-                    navbar.classList.add("scrolled")
-            }
-        })
-
-    }, {threshold: [0.9, 0.99]})
-
-    const aniObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.remove("wait-for-animate")
-                console.log('animated')
-            }
-        })
-
-    }, {threshold: 0.4})
-
-
-    Array.from(sections).forEach(section => {
-        navObserver.observe(section)
-        aniObserver.observe(section)
-        section.classList.add("wait-for-animate")
-    })
-}
-
 const panels = document.querySelectorAll('.ninjutsu__panel')
 
 function activateNinjutsu() {
     Array.from(panels).forEach(panel => {
         panel.addEventListener('click', toggleNinjutsu)
-        console.log(panel)
+        panel.addEventListener('transitionstart', displayArticle)
     })
 }
 
 function toggleNinjutsu() {
     if (this.classList.contains('active')) {
         this.classList.remove('active')
-        this.querySelector(".ninjutsu-article").style.display = "none";
         Array.from(panels).filter(panel => panel.classList.contains('shrink')).forEach(panel => {
             panel.classList.remove('shrink')
         });
+        const article = this.querySelector('.ninjutsu-article')
+        article.style.width = "0"
+        article.style.height = "0"
     } else {
         this.classList.add('active')
-        this.querySelector('.ninjutsu-article').style.display = "flex";
         Array.from(panels).filter(panel => !panel.classList.contains('active')).forEach(panel => {
             panel.classList.add('shrink')
         })
     }
 }
 
+function displayArticle(e) {
+    if (!(e.propertyName === "flex-grow"))
+        return
+    if (e.target.classList.contains('shrink')) {
+        const panelArticle = document.querySelector('.ninjutsu__panel.active .ninjutsu-article')
+        if (panelArticle.style.width === "unset") {
+            return 0;
+        }
+        setTimeout(() => {
+            panelArticle.style.width = "unset"
+            panelArticle.style.height = "unset"
+        }, 150)
+    }
+}
+
+activatePage();
 activateSlider();
-activateNavigation();
 activateNinjutsu();
