@@ -186,6 +186,7 @@ header.scrolled {
 
     .nav-container {
         display: block;
+        position: relative;
         top: 0;
         /*overflow: hidden;*/
         padding: 0;
@@ -206,14 +207,15 @@ header.scrolled {
     }
 
     .nav__links {
-        position: relative;
+        position: absolute;
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
         padding-inline: clamp(4rem, 10vw + 0.5rem, 6rem);
         padding-bottom: 3rem;
+        top: -19.5em;
         background: var(--clr-global-white);
-        transform: translateY(-135%);
-        transition: transform 200ms ease-in;
+        transition: transform 400ms cubic-bezier(.22, .61, .36, 1) 200ms;
         z-index: -1;
     }
 
@@ -221,12 +223,19 @@ header.scrolled {
         padding-block: 1em;
         border-bottom: var(--bstyle);
         display: block;
-        /*text-align: center;*/
         font-size: clamp(1rem, 0.1rem + 3vw, 1.5rem);
+        opacity: 0;
+        transition: 200ms opacity ease-out;
     }
 
     .nav__links.active {
-        transform: translateY(0%);
+        transform: translateY(100%);
+        transition: transform 400ms cubic-bezier(.22, .61, .36, 1);
+    }
+
+    .nav__links.active .nav__link {
+        opacity: 1;
+        transition: 400ms opacity ease-in 100ms;
     }
 
     button.hamburger-toggle {
