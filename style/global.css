@@ -116,6 +116,7 @@ header {
     display: flex;
     justify-items: flex-end;
     font-size: clamp(1rem, 3vw + 0.5rem, 3rem);
+    cursor: pointer;
 }
 
 .logo__image {
@@ -162,7 +163,12 @@ header {
     font-size: 1.5em;
 }
 
-.nav__link:hover {
+.nav__links li {
+    position: relative;
+    padding-block: 0.5em;
+}
+
+.nav__links li:hover .nav__link {
     color: var(--clr-global-orange);
 }
 
@@ -177,7 +183,26 @@ header.scrolled {
 
 }
 
-@media (max-width: 840px) {
+@media not screen and (max-width: 840px) {
+
+    .nav__links li::before {
+        position: absolute;
+        content: '';
+        background: var(--clr-global-orange);
+        width: 100%;
+        height: 0.2em;
+        bottom: 0;
+        transform: scale(0, 1);
+        transition: 250ms transform cubic-bezier(.08, .82, .17, 1);
+        transform-origin: left;
+    }
+
+    .nav__links li:hover::before {
+        transform: scale(1, 1);
+    }
+}
+
+@media only screen and (max-width: 840px) {
     header {
         --text: var(--clr-global-black) !important;
         --background: var(--clr-global-white) !important;
@@ -254,5 +279,4 @@ header.scrolled {
     button.hamburger-toggle.active > img {
         content: url("../asset/hamburger_close.svg");
     }
-
 }
