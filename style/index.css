@@ -26,12 +26,6 @@ p {
 
 .homepage-section.welcome {
     height: 100vh;
-    /*aspect-ratio: 16 / 9;*/
-}
-
-.slider {
-    /*position: relative;*/
-    /*aspect-ratio: inherit;*/
 }
 
 .slide {
