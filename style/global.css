@@ -5,7 +5,7 @@
     --clr-global-darkbrown: #670000;
     --clr-global-lightbrown: #BEA6A0;
     --clr-global-greybrown: #56423D;
-    --clr-global-aqurablue-rgb: 0 189 213;
+    --clr-global-aqurablue-rgb: 3 188 244;
     --clr-global-lightblue: #00BDD5;
     --clr-global-blue: #0097C6;
     --clr-global-darkblue: #006290;
@@ -100,6 +100,58 @@ header {
     --svg: invert(100%) sepia(3%) saturate(0%) hue-rotate(259deg) brightness(104%) contrast(100%);
     --background: transparent;
 }
+
+/*====================================================================*/
+/*            global animation*/
+/*====================================================================*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+main {
+    --animation-duration: 500ms;
+    --delay: 50ms;
+    --text-fade-in: fadeIn var(--animation-duration) ease both;
+    --figure-drop-in: dropIn var(--animation-duration) ease both;
+    --image-slide-in: slideIn var(--animation-duration) ease-in both;
+}
+
+/*====================================================================*/
+/*            navbar styling*/
+/*====================================================================*/
 
 .nav-container {
     display: flex;
