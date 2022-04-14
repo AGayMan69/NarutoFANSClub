@@ -109,13 +109,23 @@
     width: 2.3rem;
     background: #BBBBBB;
     border-radius: 100%;
-    transition: 250ms transform ease;
+    transition: 250ms transform cubic-bezier(.17, .67, .31, 1.55);
+}
+
+.dotnav-container a:hover {
+    background: var(--clr-global-white);
+    transform: scale(1.1);
 }
 
 .dotnav-container .dotnav-link.selected {
     background: var(--clr-global-white);
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
+
+
+/*====================================================================*/
+/*          media query */
+/*====================================================================*/
 
 @media only screen and (max-width: 1024px) {
 
@@ -134,4 +144,35 @@
     .dotnav-container .dotnav-link {
         width: 1.5rem;
     }
+}
+
+/*====================================================================*/
+/*           character animation */
+/*====================================================================*/
+
+.character__pics,
+.character-wrapper > * {
+    opacity: 0;
+}
+
+
+.character-container.animate .character-wrapper > *:not(h1) {
+    --animate-order: 1;
+    animation: var(--text-fade-in);
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
+    animation-delay: var(--animation-order-delay);
+}
+
+.character-container.animate .character__title {
+    --animate-order: 0;
+    animation: var(--figure-drop-in);
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
+    animation-delay: var(--animation-order-delay);
+}
+
+.character-container.animate .character__pics {
+    --animate-order: 2;
+    animation: var(--image-slide-in);
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
+    animation-delay: var(--animation-order-delay);
 }
