@@ -22,8 +22,25 @@ function generateDotNavigation() {
         }
     }, {threshold: 0.5})
 
-    characters.forEach(character => dotNavObserver.observe(character))
+    characters.forEach(character => {
+        dotNavObserver.observe(character)
+    })
+}
+
+function activateAnimation() {
+    const animateObserver = new IntersectionObserver(entries => {
+        const activeSection = entries.filter(entry => entry.isIntersecting)[0]
+        if (activeSection) {
+            console.log(activeSection)
+            activeSection.target.classList.add('animate')
+            animateObserver.unobserve(activeSection.target)
+        }
+    }, {threshold: 0.5})
+    const characters = [...document.querySelectorAll('.character-container')]
+    characters.forEach(character => {
+        animateObserver.observe(character)
+    })
 }
 
 generateDotNavigation()
-console.log('you are gay')
+activateAnimation()
