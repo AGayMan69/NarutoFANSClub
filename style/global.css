@@ -238,20 +238,21 @@ header.scrolled {
         width: 100%;
         padding-inline: clamp(4rem, 10vw + 0.5rem, 6rem);
         padding-bottom: 3rem;
-        top: -19.5em;
+        top: -24em;
         background: var(--clr-global-white);
         transition: transform 400ms cubic-bezier(.22, .61, .36, 1) 200ms;
         z-index: -1;
     }
 
     .nav__link {
+        display: block;
+        opacity: 0;
+        font-size: 1.5rem;
         padding-block: 1em;
         border-bottom: var(--bstyle);
-        display: block;
-        font-size: clamp(1rem, 0.1rem + 3vw, 1.5rem);
-        opacity: 0;
         transition: 200ms opacity ease-out;
     }
+
 
     .nav__links.active {
         transform: translateY(100%);
