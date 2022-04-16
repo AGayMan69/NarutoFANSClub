@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/ramen.css">
     <link rel="stylesheet" href="style/global.css">
     <script defer src="ramenform.js"></script>
+    <script defer src="nav.js"></script>
     <title>Ramen</title>
 </head>
 <body>
@@ -35,27 +36,27 @@
         <ul class="ramen-type">
             <li><img src="./asset/ramen/Hakata%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r1">Hakata Ramen   $HKD 79</label>
-                <input type="checkbox" class="ramen" value="Hakata" id="r1"  />
+                <input type="checkbox" class="ramen" value="Hakata" id="r1" data-name="Hakata Ramen" data-price="79" >
             </li>
             <li><img src="./asset/ramen/Miso%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r2">Miso Ramen  $HKD59</label>
-                    <input type="checkbox" class="ramen" value="Miso" id="r2">
+                    <input type="checkbox" class="ramen" value="Miso" id="r2" data-name="Miso Ramen" data-price="59">
             </li>
             <li><img src="./asset/ramen/Sauce%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r3">Sauce Ramen  $HKD65</label>
-                <input type="checkbox" class="ramen" value="Sauce" id="r3">
+                <input type="checkbox" class="ramen" value="Sauce" id="r3" data-name="Sauce Ramen" data-price="65">
             </li>
             <li><img src="./asset/ramen/Shio%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r4">Shio Ramen  $HKD59</label>
-                <input type="checkbox" class="ramen" value="Shio" id="r4">
+                <input type="checkbox" class="ramen" value="Shio" id="r4" data-name="Shio Ramen" data-price="59">
             </li>
             <li><img src="./asset/ramen/Super%20Spicy%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r5">Mystery Spicy Ramen  $HKD79</label>
-                <input type="checkbox" class="ramen" value="Spicy" id="r5">
+                <input type="checkbox" class="ramen" value="Spicy" id="r5" data-name="Mystery Spicy Ramen" data-price="79">
             </li>
             <li><img src="./asset/ramen/Tonkotsu%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r6">Tonkotsu Ramen  $HKD65</label>
-                <input type="checkbox" class="ramen" value="Tonkotsu" id="r6">
+                <input type="checkbox" class="ramen" value="Tonkotsu" id="r6" data-name="Tonkotsu Ramen" data-price="65">
             </li>
         </ul>
     </fieldset>
@@ -64,63 +65,63 @@
                 <h1 class="ala-logo">A la carte アラカルト</h1>
                 <ul class="ala-list">
 
-                    <li><input type="checkbox" class="ala" value="ala-noodle" id="a1">
+                    <li><input type="checkbox" class="ala" value="ala-noodle" id="a1" data-name="Plus Noodles" data-price="14">
                         <label class="ala-info" for="a1">Plus Noodles   $14</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-char" id="a2">
+                    <li><input type="checkbox" class="ala" value="ala-char" id="a2" data-name="Char Siew" data-price="20">
                         <label class="ala-info" for="a2">Char Siew   $20</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-onion" id="a3">
+                    <li><input type="checkbox" class="ala" value="ala-onion" id="a3" data-name="Zephyr Onion" data-price="15">
                         <label class="ala-info" for="a3">Zephyr Onion   $15</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-kimchi" id="a4">
+                    <li><input type="checkbox" class="ala" value="ala-kimchi" id="a4" data-name="Kimchi" data-price="15">
                         <label class="ala-info" for="a4">Kimchi   $15</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-tonkatsu" id="a5">
+                    <li><input type="checkbox" class="ala" value="ala-tonkatsu" id="a5" data-name="Tonkatsu" data-price="30">
                         <label class="ala-info" for="a5">Tonkatsu   $30</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-saffron" id="a6">
+                    <li><input type="checkbox" class="ala" value="ala-saffron" id="a6" data-name="Deep-Fried Saffron Balls" data-price="25">
                         <label class="ala-info" for="a6">Deep-Fried Saffron Balls   $25</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-chicken" id="a7">
+                    <li><input type="checkbox" class="ala" value="ala-chicken" id="a7" data-name="Handmade Japanese Fried Chicken" data-price="35">
                         <label class="ala-info" for="a7">Handmade Japanese Fried Chicken   $35</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-wicker" id="a8">
+                    <li><input type="checkbox" class="ala" value="ala-wicker" id="a8" data-name="Lemon Chicken Wicker" data-price="25">
                         <label class="ala-info" for="a8">Lemon Chicken Wicker   $25</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-flvet" id="a9">
+                    <li><input type="checkbox" class="ala" value="ala-flvet" id="a9" data-name="Flax Season Vegetables" data-price="19">
                         <label class="ala-info" for="a9">Flax Season Vegetables   $19</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-shrimp" id="a10">
+                    <li><input type="checkbox" class="ala" value="ala-shrimp" id="a10" data-name="Japanese Fried Shrimp" data-price="35">
                         <label class="ala-info" for="a10">Japanese Fried Shrimp   $35</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-tofu" id="a11">
+                    <li><input type="checkbox" class="ala" value="ala-tofu" id="a11" data-name="Signature Fried Tofu" data-price="15">
                         <label class="ala-info" for="a11">Signature Fried Tofu   $15</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-tempura" id="a12">
+                    <li><input type="checkbox" class="ala" value="ala-tempura" id="a12" data-name="Japanese Tempura" data-price="35">
                         <label class="ala-info" for="a12">Japanese Tempura   $35</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-croquette" id="a13">
+                    <li><input type="checkbox" class="ala" value="ala-croquette" id="a13" data-name="Japanese Croquette" data-price="25">
                         <label class="ala-info" for="a13">Japanese Croquette   $25</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-egg" id="a14">
+                    <li><input type="checkbox" class="ala" value="ala-egg" id="a14" data-name="Soft-boiled Egg" data-price="19">
                         <label class="ala-info" for="a14">Soft-boiled Egg   $19</label>
 
 
-                    <li><input type="checkbox" class="ala" value="ala-vetem" id="a15">
+                    <li><input type="checkbox" class="ala" value="ala-vetem" id="a15" data-name="Vegetable Tempura" data-price="25">
                         <label class="ala-info" for="a15">Vegetable Tempura   $25</label>
 
 
@@ -129,18 +130,18 @@
         <fieldset class="drink">
             <h1 class="drink-logo">Drinks 飲み物</h1>
             <ul class="drink-list">
-                <li><input type="checkbox" class="drink" value="cola" id="d1">
+                <li><input type="checkbox" class="drink" value="cola" id="d1" data-name="Cola" data-price="11">
                     <label class="drink-info" for="d1">Cola   $11</label>
 
                 </li>
-                <li><input type="checkbox" class="drink" value="sprite" id="d2">
+                <li><input type="checkbox" class="drink" value="sprite" id="d2" data-name="Sprite" data-price="11">
                     <label class="drink-info" for="d2">Sprite $11</label>
                 </li>
-                <li><input type="checkbox" class="drink" value="tea" id="d3">
+                <li><input type="checkbox" class="drink" value="tea" id="d3" data-name="Unsweetened Green Tea" data-price="8">
                     <label class="drink-info" for="d3">Unsweetened Green Tea   $8</label>
 
                 </li>
-                <li><input type="checkbox" class="drink" value="orange" id="d4">
+                <li><input type="checkbox" class="drink" value="orange" id="d4" data-name="Orange juice" data-price="8">
                     <label class="drink-info" for="d4">Orange juice   $8</label>
 
                 </li>
@@ -169,9 +170,18 @@
                         </li>
                     </ul>
             </div>
-            <div class="total-money">Total $HKD: </div>
-                <div class="money"></div>
+            <div class="Tableware">
+                <div class="table">Tableware:
+                    <select name="ware" >
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                    </select>
+                </div>
             </div>
+            <div class="total-money">Total $HKD: </div>
+
+            </div>
+
         <fieldset class="information">
             <h1 class="infor-logo">Information インフォメーション</h1>
             <div class="input-info">
@@ -209,7 +219,7 @@
                 </ul>
             </div>
         </fieldset>
-        <input type="submit" class="submit">
+        <input type="submit" class="submit" value="Submit">
 
         </form>
 
