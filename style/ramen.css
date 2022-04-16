@@ -18,19 +18,27 @@ input, textarea {
     background: white;
 }
 
-input[type='checkbox']{
-    border:1px solid orange;
+input[type='checkbox'] {
+    display: inline-block;
+    position: relative;
+    border: 0.1em solid orange;
+    border-radius: 0.4em;
     padding: 0.8em;
     background: white;
     max-height: 1em;
     max-width: 1em;
 }
 
-input[type='number']{
+input[type='checkbox']:checked {
+    background: red;
+}
+
+input[type='number'] {
     border: 0.5px solid grey;
     max-width: 3.5ch;
 
 }
+
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
     opacity: 1;
