@@ -61,7 +61,7 @@ p {
 }
 
 /*make the active slide visible*/
-.slide[data-active] {
+.slide.active {
     opacity: 1;
     z-index: 1;
     transition-delay: 0ms;
