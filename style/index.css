@@ -2,6 +2,7 @@
 /*            home styling*/
 /*====================================================================*/
 :root {
+    /*custom property set for ninjutsu panel color*/
     --clr-home-earth-rgb: 74, 45, 1;
     --clr-home-fire-rgb: 39, 0, 0;
     --clr-home-wind-rgb: 74, 45, 1;
@@ -9,10 +10,13 @@
     --clr-home-water-rgb: 0, 33, 64;
 }
 
+/*set the line height of all paragraph of the home page to 2ch*/
 p {
     line-height: 2;
 }
 
+/*set all not full-screen width section to width of 90%*/
+/*and horizontally center, and vertically align it's content */
 .homepage-section:not(:first-child):not(:last-child):not(:nth-child(3)):not(:nth-child(7)) {
     display: flex;
     width: min(90vw, 2800px);
@@ -24,49 +28,53 @@ p {
 /*            section styling*/
 /*====================================================================*/
 
+/*=============================*/
+/*        welcome section*/
+/*=============================*/
+
+/*set the height of the welcome section to 100% viewport height*/
 .homepage-section.welcome {
     height: 100vh;
 }
 
+
+/*make the slide container fit the size of the slider*/
 .slide {
-    --clr: var(--clr-global-white);
-    --fs: 10rem;
-    --tsha: none;
     --fw: fw-h1;
     position: absolute;
-    display: block;
     inset: 0;
     opacity: 0;
     font-weight: var(--fw);
     font-size: var(--fs);
     color: var(--clr);
+    /*set the text shadow color to orange*/
     text-shadow: var(--tsha);
+    /*setting the transition timeing for all the slide*/
     transition: 200ms opacity ease-in-out;
     transition-delay: 300ms;
 }
 
+/*fill the slide the image background*/
 .slide .slide__image {
     height: 100%;
     width: 100%;
 }
 
-.slide[data-active] {
+/*make the active slide visible*/
+.slide.active {
     opacity: 1;
     z-index: 1;
     transition-delay: 0ms;
 }
 
+/*centering the slide overlay and its content*/
 .slide__overlay {
+    align-items: center;
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    color: inherit;
-    text-shadow: inherit;
-    font-weight: inherit;
-    font-size: inherit;
-    inset: 0;
 }
 
 .slide__overlay h1 {
@@ -75,13 +83,11 @@ p {
     color: var(--clr);
 }
 
-/*=============================*/
-/*        welcome section*/
-/*=============================*/
 /*banner 1 style*/
 .slide:nth-child(1) {
     --clr: var(--clr-global-white);
     --tsha: 0.00em 0.05em var(--clr-global-orange);
+    /*make the font grow with the viewport*/
     --fs: clamp(3rem, 8vw + 2rem, 11rem);
     text-transform: capitalize;
     letter-spacing: -0.10ch;
@@ -105,6 +111,7 @@ p {
 }
 
 .slide:nth-child(2) {
+    /*make the font grow with the viewport*/
     --fs: clamp(6rem, 15vw + 1rem, 20rem);
 }
 
@@ -117,6 +124,7 @@ p {
 
 /*banner 3 style*/
 .slide:nth-child(3) {
+    /*make the font grow with the viewport*/
     --fs: clamp(5rem, 8vw + 1rem, 10rem);
     --clr: var(--clr-global-white);
     --tsha: 0.02em 0.06em var(--clr-global-orange);
@@ -124,6 +132,7 @@ p {
 }
 
 .slide:nth-child(3) h1:nth-child(2) {
+    /*make this heading 0.5 size of its sibling*/
     --fs: 0.5em;
     text-transform: none;
 }
@@ -133,11 +142,14 @@ p {
     --tsha: 0.01em 0.04em var(--clr-global-white)
 }
 
+/*styling the scroll svg*/
+/*and placing at the bottom of the slide*/
 .slide__overlay > img {
     position: absolute;
     max-width: 10rem;
     bottom: 5%;
     transform: scale(70%);
+    /*make the svg to color white*/
     filter: invert(100%) sepia(3%) saturate(0%) hue-rotate(259deg) brightness(104%) contrast(100%);
 }
 
@@ -146,18 +158,21 @@ p {
     position: absolute;
     z-index: 2;
     color: var(--clr);
+    /*make the slider button grow with the viewport*/
     font-size: clamp(4rem, 9vw + 1rem, 10rem);
+    /*vertical centering the button*/
     top: 0;
     bottom: 0;
+    /*adding horizontal padding to the button*/
     padding-inline: 0.4em;
-    transition: transform 200ms cubic-bezier(.62, .02, .33, 1.94);
 }
 
+/*hovering effect of the slider button*/
 .slider__button:hover {
     --clr: rgba(255, 255, 255, 1);
-    transform: scale(1.1);
 }
 
+/*move the next button to the rigth of the slider*/
 .slider__button.next {
     right: 0;
 }
@@ -165,56 +180,74 @@ p {
 /*=============================*/
 /*        chakra section*/
 /*=============================*/
+
+/*set the chakra section to 90% of the view port height*/
 section.chakra {
     height: 90vh;
 }
 
+/*centering the chakra article and image*/
 .chakra .chakra-wrapper {
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    /*wrap when according the screen size*/
     flex-wrap: wrap;
+    /*add minimum size to the gap */
     gap: min(7rem, 10%);
 }
 
+/*making the content in the wrapper with equal grow rate*/
 .chakra .chakra-wrapper > * {
     flex-basis: 0;
 }
 
+/*vertical align the heading the paragraph*/
 .chakra article {
     display: inline-flex;
     flex-direction: column;
     flex-grow: 0;
 }
 
+/*styling chakra article title*/
 .chakra__title {
+    /*make the heading grow with the screen size*/
     font-size: clamp(6rem, 8vw + 1rem, 11rem);
     --shadow: 0.015em;
     line-height: 1;
     color: #152E55;
+    /*adding glowing effect the chakra heading*/
     animation: glowing 2500ms ease-in alternate infinite;
 }
 
+/*styling the japanese translation of the title*/
 .chakra__title > span {
     display: block;
+    /*font size equal to 10% of the title*/
     font-size: 0.1em;
     text-align: center;
 }
 
 .chakra_text {
     min-width: unset;
+    /*set the maximum width of the paragraph 70% of the viewport width*/
     width: min(100%, 70vw);
 }
 
+/*chakra video styling*/
 .chakra__video {
     flex-grow: 1;
+    /*fix the aspect ratio of the video*/
     aspect-ratio: 15.5 / 9;
     height: auto;
+    /*make the video rounded*/
     border-radius: 2.5rem;
+    /*setting the max-min width of the video*/
     max-width: 55rem;
     min-width: 30.3rem;
 }
 
+/*keyframes animation of the chakra title*/
 @keyframes glowing {
     0% {
         /*color: white;*/
@@ -222,22 +255,25 @@ section.chakra {
     }
 
     80%, 100% {
+        /*glowing layer*/
         text-shadow: 0 0 var(--shadow) rgba(var(--clr-global-aqurablue-rgb)),
         0 0 calc(var(--shadow) * 2) rgba(var(--clr-global-aqurablue-rgb)),
         0 0 calc(var(--shadow) * 4) rgba(var(--clr-global-aqurablue-rgb)),
         0 0 calc(var(--shadow) * 8) rgba(var(--clr-global-aqurablue-rgb))
-        /*0 0 calc(var(--shadow) * 16) rgba(var(--clr-global-aqurablue-rgb));*/
     }
 }
 
 /*=============================*/
 /*        ninjutsu section*/
 /*=============================*/
+
+/*set the ninjutsu section 100% of the viewport height*/
 .ninjutsu {
     display: flex;
     height: 100vh;
 }
 
+/*make the ninjutsu panels with equal size*/
 .ninjutsu > * {
     flex-basis: 0;
     flex-grow: 1;
@@ -246,59 +282,73 @@ section.chakra {
 }
 
 .ninjutsu__panel {
+    /*for child position absolute*/
     position: relative;
     overflow: hidden;
+    /*animate the panel expanding effect*/
     transition: flex-grow 0.3s ease-out;
 }
 
+/*adding color overlay for the ninjutsu panel*/
 .ninjutsu__panel::before {
     content: "";
     position: absolute;
     inset: 0;
+    /*color change according to panel*/
     background-color: rgba(var(--clr-panel-color), 0.6);
     z-index: 1;
+    /*panel hover color animation*/
     transition: 200ms background-color ease-in;
 }
 
+/*panel hover color effect*/
 .ninjutsu__panel:hover:not(.active)::before {
     background-color: rgba(var(--clr-panel-color), 0.3);
 }
 
+/*make other panel shrink when the active panel is expanding*/
 .ninjutsu__panel.shrink {
     flex-grow: 0;
 }
 
+/*making the panel overlay*/
+/*and centering the content*/
 .panel__overlay-wrapper {
     position: absolute;
+    /*set to size of the panel*/
     inset: 0;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 4;
+    z-index: 2;
 }
 
+/*when the panel is active*/
+/*set the gap between the icon, title, article */
 .ninjutsu__panel.active .panel__overlay-wrapper {
     gap: 5em;
 }
 
-.ninjutsu__panel.active .panel__overlay-wrapper > * {
-    flex-grow: 0;
-}
-
 .panel__overlay-wrapper .panel__icon {
     display: flex;
+    /*cursor hint*/
     cursor: pointer;
+    /*animation when shrinking*/
     transition: 0.2s opacity ease-in;
 }
 
+/*panel icon hovering effect*/
 .ninjutsu__panel:hover .panel__icon {
     transform: scale(1.2);
     transition: 150ms transform cubic-bezier(.62, .02, .33, 1.94);
 }
 
+/*panel icon styling*/
 .panel__overlay-wrapper .panel__icon span {
     --clr-shad: var(--clr-global-white);
+    /*text shadowing effect by vivi tseng*/
+    /*https://codepen.io/vii120/pen/ZEvxKEy*/
     --shad: 0 0.01em 0 rgba(var(--clr-panel-color)),
     0.01em 0 0 white,
     -0.01em 0.02em 0 rgba(var(--clr-panel-color)),
@@ -316,6 +366,7 @@ section.chakra {
     background-color: var(--clr-panel-color);
     border: 0.1em solid white;
     margin: auto;
+    /*make the font grow with screen*/
     font-size: min(6vw, 8rem);
     font-weight: var(--fw-medium);
     text-shadow: var(--shad);
@@ -325,6 +376,7 @@ section.chakra {
     border-radius: 50%;
 }
 
+/*opacity animation for shinking icon*/
 .ninjutsu__panel.shrink .panel__icon {
     opacity: 0;
 }
@@ -332,59 +384,74 @@ section.chakra {
 .ninjutsu__panel .ninjutsu-article {
     display: flex;
     gap: 1rem;
-    width: 0;
     overflow: hidden;
 }
 
+/*shrink the article when panel is not active*/
 .ninjutsu__panel .ninjutsu-article {
     width: 0;
     height: 0;
 }
 
+/*panel article animation*/
+/*setting the animation style and delay */
 .ninjutsu__panel.active .ninjutsu-article > * {
     transition: opacity 400ms cubic-bezier(.9, .03, .69, .22);
     transition-delay: calc(var(--order) * 500ms + 200ms);
 }
 
 .ninjutsu__panel .panel_title {
+    /*let the font size grow with screen width*/
     font-size: min(8rem, 8vw);
     text-align: center;
+    /*start state of the opacity animation*/
     opacity: 0;
+    /*animation order*/
     --order: 0;
 }
 
 .ninjutsu__panel .panel_title span {
     display: block;
+    /*make the font size of english title 30% of the japanese title*/
     font-size: 0.3em;
 }
 
+/*styling the panel title*/
+/*activate opacity animation when the panel is active*/
 .ninjutsu__panel.active .panel_title {
     line-height: 1;
     opacity: 1;
 }
 
+/*make the panel paragraph to maximum 45 character long*/
 .ninjutsu__panel .panel_description {
     width: unset;
     min-width: unset;
     max-width: 45ch;
     opacity: 0;
+    /*animation order*/
     --order: 1;
 }
 
+/*activate opacity animation when the panel is active*/
 .ninjutsu__panel.active .panel_description {
     opacity: 1;
 }
 
+/*make the panel background fit the panel size*/
 .ninjutsu__panel .panel__photo {
     height: 100%;
     width: 100%;
+    /*adding blur effect to the image*/
     filter: blur(0.3rem);
 }
 
+/*unblur effect when hovering*/
 .ninjutsu__panel:hover:not(.active) .panel__photo {
     filter: blur(0);
 }
 
+/*assigning panel color*/
 .water {
     --clr-panel-color: var(--clr-home-water-rgb);
 }
@@ -409,38 +476,49 @@ section.chakra {
 /*        countries section*/
 /*=============================*/
 
+/*set the countries section to 80% screen height*/
 .homepage-section.countries {
     height: 80vh;
 }
 
+/*aligning the article and image*/
 .countries-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
+    /*vertical centering the wrapper*/
     margin-block: auto;
-    gap: 10rem;
+    gap: min(7rem, 10%);
     flex-grow: 1;
     flex-wrap: wrap;
 }
 
+/*make the countries article and image have the same flex grow rate*/
 .countries-wrapper > * {
     flex-basis: 0;
 }
 
+/*styling countries*/
 .countries__img {
+    /*forcing the image aspect ratio*/
     aspect-ratio: 16/ 9;
     max-width: 49rem;
     min-width: 37.6vw;
+    /*let the image take the remaining space*/
     flex-grow: 1;
     height: auto;
 }
 
+/*styling the title of the countries article*/
 .countries__title {
     color: #C39C92;
+    /*capitalize the first character of the title*/
     text-transform: capitalize;
+    /*let the title grow with the screen width*/
     font-size: clamp(4rem, 7vw + 1rem, 10rem);
 }
 
+/*styling the paragraph of the countries article*/
 .countries__text {
     font-size: var(--fs-small);
 }
@@ -448,14 +526,17 @@ section.chakra {
 /*=============================*/
 /*        kage section*/
 /*=============================*/
+
+/*kage section styling*/
 .homepage-section.kage {
     height: 100vh;
+    display: flex;
     justify-content: center;
     background: var(--clr-global-lightlightyellow);
     border-radius: 5em;
-    gap: min(5em, 5vw);
 }
 
+/*spacing around the title and the kage character container*/
 .kage-wrapper {
     display: flex;
     flex-direction: column;
@@ -464,6 +545,7 @@ section.chakra {
     height: 90%;
 }
 
+/*kage title styling*/
 .kage__title {
     text-align: center;
     color: #420000;
@@ -478,26 +560,31 @@ section.chakra {
 
 .kage__content {
     display: grid;
+    /*css grid, move the kage character to next row */
+    /*if can't fit each character with the width of 170px*/
     grid-template-columns:
             repeat(auto-fit, minmax(10.6rem, 1fr));
+    /*gap between the kage character*/
     gap: 3rem;
     width: 100%;
 }
 
+/*vertical aligning the kage container content*/
 .kage__content.character {
-    /*aspect-ratio: 8 / 25;*/
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+/*styling the kage image*/
 .kage__content .character__image {
+    /*forcing the aspect ratio of the kage image*/
     aspect-ratio: 5/8;
     object-fit: cover;
     height: auto;
-    /*max-width: 400px;*/
 }
 
+/*styling the kage name*/
 .kage__content .character__name {
     color: var(--clr-global-darkbrown);
     font-weight: var(--fw-bold-semi);
@@ -507,6 +594,7 @@ section.chakra {
     margin-top: 4rem;
 }
 
+/*styling the kage type*/
 .kage__content .character__kage {
     text-align: center;
     color: var(--clr-global-grey);
@@ -518,24 +606,27 @@ section.chakra {
 /*        tailed beast section*/
 /*=============================*/
 
+/*set the tail-beast height to 100% screen height*/
 .homepage-section.tail-beast {
     height: 100vh;
 }
 
+/*flex aligning the tail beast image and article*/
 .tail-beast-wrapper {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     width: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    /*set maximum gap to 360px otherwise 15% of the container*/
     gap: min(20rem, 15%);
 }
 
+/*make the article and image have the same flex grow rate*/
 .tail-beast-wrapper > * {
     flex-basis: 0;
 }
 
+/*styling the tail beast title*/
 .tail-beast__title {
     position: relative;
     text-align: center;
@@ -545,6 +636,8 @@ section.chakra {
     padding-block: 0.2em;
 }
 
+/*styling the tail beast japanese translation*/
+/*and place on the middle of the english title*/
 .tail-beast__title span {
     position: absolute;
     font-size: 0.3em;
@@ -553,8 +646,11 @@ section.chakra {
     transform: translateY(-50%) translateX(-50%);
 }
 
+/*tail beast image styling*/
 .tail-beast__img {
+    /*forcing the aspect ratio of the image*/
     aspect-ratio: 1;
+    /*let the image to take the remaining space*/
     flex-grow: 1;
     border-radius: 3em;
     max-width: 55rem;
@@ -564,40 +660,34 @@ section.chakra {
 /*         jinchuriki section*/
 /*=============================*/
 
+/*vertical aligning the jinchuriki content*/
 .homepage-section.jinchuriki {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     gap: 1em;
-    /*height: 100vh;*/
 }
 
-.homepage-section.jinchuriki > * {
-    flex-basis: 0;
-    flex-grow: 1;
-    width: 100%;
-}
-
-.jinchuriki__header {
-    display: flex;
-}
-
+/*styling the jinchuriki title*/
 .jinchuriki__title {
-    margin: auto;
     text-align: center;
     color: var(--clr-global-greybrown);
+    /*let the font size of the title grow with the viewport width*/
     font-size: clamp(4rem, 7vw + 0.5rem, 8rem);
     line-height: 0.95;
+    /*vertical padding*/
     padding-block: 0.5em;
 }
 
+/*styling the jinchuriki japanese title*/
 .jinchuriki__title span {
     display: block;
+    /*set the font size 30% of the english title*/
     font-size: 0.3em;
-    /*line-height: 1;*/
 }
 
+/*styling the background of the jinchuriki character container*/
 .jinchuriki__container {
     background: url("../asset/home/bijuu.png") no-repeat center;
     background-size: cover;
@@ -605,50 +695,65 @@ section.chakra {
     display: flex;
 }
 
+/*styling wrapper for placing the jinchuriki character*/
 .jinchuriki__container-wrapper {
+    /*ensure the jinchuriki character only fill up to 60% of the screen width*/
     width: min(70rem, 60%);
+    /*center horizontally*/
     margin-inline: auto;
     display: grid;
     gap: min(10em, 3vw);
+    /*css grid with 3 columns*/
     grid-template-columns: repeat(3, 1fr);
+    /*verticl padding*/
     padding-block: 3%;
     align-items: center;
 }
 
+/*styling the jinchuriki card*/
 .jinchuriki__container-wrapper .character {
-    overflow: hidden;
     aspect-ratio: 6 / 13;
+    overflow: hidden;
     position: relative;
+    /*assigning hover fade out animation*/
     --fade-out-duration: 200ms;
     --fade-out-timing: ease-out;
     --fade-out-function: opacity var(--fade-out-duration) var(--fade-out-timing);
 }
 
+/*position the jinchuriki card background image*/
 .jinchuriki__container-wrapper .character__image {
     aspect-ratio: 6 / 13;
     object-position: center top;
 }
 
+/*styling the jinchuriki card overlay*/
 .jinchuriki__container-wrapper .character__name {
     position: absolute;
+    /*centering the overlay to the card*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /*make the japanese title orientation vertical*/
     writing-mode: vertical-lr;
     color: var(--clr-global-white);
     font-weight: var(--fw-bold);
     font-size: 5rem;
+    /*prevent the english title from wrapping*/
     white-space: nowrap;
     transition: var(--fade-out-function);
 }
 
+/*styling the jinchuriki card english title*/
 .jinchuriki__container-wrapper .character__name span {
+    /*make the english title horizontal*/
     writing-mode: lr;
     font-size: 0.25em;
     line-height: 2;
     font-weight: var(--fw-bold-semi);
 }
 
+/*adding jinchuriki card image mask*/
 .jinchuriki__container-wrapper .character::before {
     --color: 240, 240, 240;
     content: "";
@@ -658,6 +763,7 @@ section.chakra {
     transition: var(--fade-out-function);
 }
 
+/*activate the jinchuriki opacity hovering effect*/
 .jinchuriki__container-wrapper .character:hover .character__name {
     opacity: 0;
 }
@@ -666,23 +772,17 @@ section.chakra {
     opacity: 0;
 }
 
-.jinchuriki__container-wrapper .character:nth-child(1) {
-    transform: translateY(-8%);
-}
-
-.jinchuriki__container-wrapper .character:nth-child(3) {
-    transform: translateY(8%);
-}
-
 /*=============================*/
-/*         swar section*/
+/*         shinobi war section*/
 /*=============================*/
 
+/*make the shinobi war section 100% of the viewport height*/
 .homepage-section.swar {
     height: 100vh;
     position: relative;
 }
 
+/*darken the shinobi war background video*/
 .homepage-section.swar::before {
     content: "";
     position: absolute;
@@ -690,6 +790,7 @@ section.chakra {
     background: rgba(0, 0, 0, 0.4);
 }
 
+/*centering the shinobi war overlay article*/
 .swar .swar__overlay {
     position: absolute;
     top: 50%;
@@ -698,20 +799,26 @@ section.chakra {
     color: var(--clr-global-white);
 }
 
+/*styling the shinobi war article title*/
 .swar .swar__title {
+    /*let the article font size grow with the screen width*/
     font-size: clamp(4rem, 7vw + 0.1rem, 8rem);
     line-height: 1;
 }
 
+/*styling the shinobi war japanese title*/
 .swar .swar__title > span {
     display: block;
+    /*let the font size be 20% of the english title*/
     font-size: 0.2em;
 }
 
+/*forcing gap between the title and paragraph*/
 .swar .swar__description {
     margin-top: 2em;
 }
 
+/*let the video fill up the shinobi war section*/
 .swar .swar__video {
     height: 100%;
 }
@@ -725,6 +832,7 @@ section.chakra {
     /*=============================*/
     /*         welcome section*/
     /*=============================*/
+    /*centering the welcome message of the first slide*/
     .slide:nth-child(1) .slide__overlay {
         top: 0;
         bottom: 0;
@@ -736,28 +844,27 @@ section.chakra {
         white-space: nowrap;
     }
 
-    .slide:nth-child(2) {
-
-    }
-
     /*=============================*/
     /*         countries section*/
     /*=============================*/
+    /*prevent vertical overflow*/
     .homepage-section.countries {
         height: unset;
     }
 
+    /*changing the gap and horizontal margin of the countries section*/
     .countries-wrapper {
-        justify-content: center;
         margin-block: max(4rem, 10vw);
         gap: min(10rem, 12vw);
     }
 
+    /*enable flex grow for the countries article and set the max width*/
     .countries-wrapper article {
         flex-grow: 1;
         max-width: 80%;
     }
 
+    /*set the max width of the image*/
     .countries-wrapper .countries__img {
         max-width: 80%;
     }
@@ -765,10 +872,12 @@ section.chakra {
     /*=============================*/
     /*         kage section*/
     /*=============================*/
+    /*prevent vertical overflow*/
     .homepage-section.kage {
         height: unset;
     }
 
+    /*adjust the margin of the kage title*/
     .kage__title {
         margin-top: 1em;
     }
@@ -776,54 +885,47 @@ section.chakra {
     /*=============================*/
     /*         tailbeast section*/
     /*=============================*/
+    /*prevent vertical overflow of the content*/
     .homepage-section.tail-beast {
         height: auto;
     }
 
+    /*let the tail beast image wrap*/
     .tail-beast-wrapper {
         flex-wrap: wrap;
         gap: min(10rem, 10vw);
     }
 
+    /*let the tail beast article fill the container*/
     .tail-beast-wrapper article {
         flex-grow: 1;
     }
 
+    /*changing the tail beast paragraph from 100% to 85% of the container*/
     .tail-beast__description {
         min-width: 85%;
+        /*center horizontally*/
         margin-inline: auto;
     }
 
+    /*force the tail beast image to wrap*/
     .tail-beast__img {
         min-width: 50vw;
     }
 
-    /*=============================*/
-    /*         jinchuriki section*/
-    /*=============================*/
-    .homepage-section.jinchuriki {
-        /*height: 150vh;*/
-    }
-
-    .jinchuriki__container-wrapper .character:nth-child(1) {
-        transform: none;
-    }
-
-    .jinchuriki__container-wrapper .character:nth-child(3) {
-        transform: none;
-    }
 }
 
 @media only screen and (max-width: 1024px) {
 
-
     /*=============================*/
     /*         ninjutsu section*/
     /*=============================*/
+    /*make the chakra section to 100% of the screen height*/
     section.chakra {
         height: 100vh;
     }
 
+    /*aligning the chakra article to center*/
     .chakra article {
         flex-grow: 1;
         margin-bottom: 5%;
@@ -831,30 +933,44 @@ section.chakra {
         align-items: center;
     }
 
+    /*adjusting gap between the chakra title and paragraph*/
     .chakra__title {
         margin-bottom: 0.4em;
+    }
+
+    /*forcing the video to wrap*/
+    .chakra__video {
+        min-width: 50vw;
     }
 
     /*=============================*/
     /*         ninjutsu section*/
     /*=============================*/
+    /*change the orientation of the ninjutsu section*/
     .ninjutsu {
         flex-direction: column;
     }
 
+    /*change the orientation of the overlay to vertical*/
     .panel__overlay-wrapper {
         flex-direction: column;
     }
 
+    /*adjust the font size of the ninjutsu panel icon*/
     .ninjutsu__panel.active .panel__icon > span {
+        /*set minimum font size to 4rem otherwise 12vw*/
         font-size: max(4rem, 12vw);
     }
 
+    /*assign new styling to the panel title*/
     .panel__overlay-wrapper .panel_title {
+        /*change the orientation of the title the veritcal*/
         writing-mode: vertical-lr;
+        /*prevent the english title from wrapping*/
         white-space: nowrap;
     }
 
+    /*forcing the orientation of english title to horizontal*/
     .panel__overlay-wrapper .panel_title > span {
         writing-mode: lr;
         display: unset;
@@ -871,18 +987,26 @@ section.chakra {
 /*         welcome section*/
 /*=============================*/
 
-.welcome.animate .slide__overlay > h1 {
-    animation: var(--text-fade-in);
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
+/*assigning the animation order of the first slide*/
+
+.welcome.animate .slide:nth-child(1) h1:nth-child(2) {
+    --animate-order: 0;
 }
 
-.welcome .slide:nth-child(1) h1:nth-child(2) {
+.welcome.animate .slide:nth-child(1) h1:nth-child(2) {
     --animate-order: 1;
-    animation-delay: var(--animation-order-delay);
 }
 
-.welcome .slide:nth-child(1) h1:nth-child(3) {
+.welcome.animate .slide:nth-child(1) h1:nth-child(3) {
     --animate-order: 2;
+}
+
+/*assigning animation and delay to the h1s of the first slide*/
+.welcome.animate .slide:nth-child(1) .slide__overlay > * {
+    /*assigning fade in keyframe*/
+    animation: var(--text-fade-in);
+    /*assigning animation delay according to the animate order*/
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
 }
 
@@ -890,17 +1014,21 @@ section.chakra {
 /*         chakra section*/
 /*=============================*/
 
+/*make the chakra section content transparent before playing the animation*/
 .chakra .chakra-wrapper > * {
     opacity: 0;
 }
 
+/*assigning fade in animation for the chakra article*/
 .chakra.animate .chakra-wrapper article {
     animation: var(--text-fade-in);
 }
 
+/*assigning slide in animation for the chakra video*/
 .chakra.animate .chakra-wrapper .chakra__video {
     --animate-order: 1;
     animation: var(--image-slide-in);
+    /*let the video slide in after the article animation is played*/
     --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
 }
@@ -909,18 +1037,22 @@ section.chakra {
 /*         countries section*/
 /*=============================*/
 
+/*make the countries section content transparent before playing the animation*/
 .countries .countries-wrapper > * {
     opacity: 0;
 }
 
+/*assigning fade in animation for the countries article*/
 .countries.animate .countries-wrapper article {
     --animate-order: 0;
     animation: var(--text-fade-in);
 }
 
+/*assigning slide in animation for the countries image*/
 .countries.animate .countries__img {
     --animate-order: 1;
     animation: var(--image-slide-in);
+    /*let the video slide in after the article animation is played*/
     --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
 }
@@ -929,76 +1061,80 @@ section.chakra {
 /*         kage section*/
 /*=============================*/
 
-.kage {
-    opacity: 0;
-}
-
-.kage.animate {
-    animation: var(--text-fade-in);
-}
-
-.kage .kage-wrapper .kage__title {
-    opacity: 0;
-}
-
-.kage.animate .kage__title {
-    --animate-order: 1;
-    animation: var(--figure-drop-in);
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
-    animation-delay: var(--animation-order-delay);
-}
-
+/*make the content of kage section transparent before the animation is played*/
+.kage,
+.kage-wrapper .kage__title,
 .kage .kage__content > * {
     opacity: 0;
 }
 
-.kage.animate .kage__content > * {
-    --animate-order: 2;
-    --kage-delay: 250ms;
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration)
-    + var(--delay)
-    + var(--kage-delay) * var(--kage-order));
+/*assigning fade in animation to the kage section container*/
+.kage.animate {
     animation: var(--text-fade-in);
 }
 
+/*assigning drop in animation to the kage title*/
+.kage.animate .kage__title {
+    animation: var(--figure-drop-in);
+    /*make sure the kage title animation play after the animation of the kage container is finsihed*/
+    --animate-order: 1;
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
+    animation-delay: var(--animation-order-delay);
+}
+
+/*assigning animation order for each kage*/
 .kage.animate .character:nth-child(1) {
     --kage-order: 0;
-    animation-delay: var(--animation-order-delay);
 }
 
 .kage.animate .character:nth-child(2) {
     --kage-order: 1;
-    animation-delay: var(--animation-order-delay);
 }
 
 .kage.animate .character:nth-child(3) {
     --kage-order: 2;
-    animation-delay: var(--animation-order-delay);
 }
 
 .kage.animate .character:nth-child(4) {
     --kage-order: 3;
-    animation-delay: var(--animation-order-delay);
 }
 
 .kage.animate .character:nth-child(5) {
     --kage-order: 4;
+}
+
+/*assigning fade in animation for kage cards*/
+.kage.animate .kage__content > * {
+    /*make sure the animation is play after kage article finished its animation*/
+    --animate-order: 2;
+    /*assigning animation delay between each kage card*/
+    --kage-delay: 250ms;
+    /*calculate the animation delay for each kage card*/
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration)
+    + var(--delay)
+    + var(--kage-delay) * var(--kage-order));
+    animation: var(--text-fade-in);
     animation-delay: var(--animation-order-delay);
 }
 
 /*=============================*/
 /*         tail-beast section*/
 /*=============================*/
+
+/*make the content of kage section transparent before the animation is played*/
 .tail-beast .tail-beast-wrapper > * {
     opacity: 0;
 }
 
+/*assigning slide in animation to the tail beast image*/
 .tail-beast.animate .tail-beast__img {
     animation: var(--image-slide-in);
 }
 
+/*assiging fade in animation for article*/
 .tail-beast.animate article {
     animation: var(--text-fade-in);
+    /*make sure the animation is play after the animation of the tail beast image is play*/
     --animate-order: 1;
     --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
@@ -1007,62 +1143,68 @@ section.chakra {
 /*=============================*/
 /*         jinchuriki section*/
 /*=============================*/
-.jinchuriki .jinchuriki__header {
+
+/*make the content of jinchuriki section transparent before the animation is played*/
+.jinchuriki .jinchuriki__header,
+.jinchuriki__container-wrapper > * {
     opacity: 0;
 }
 
-.jinchuriki .jinchuriki__container-wrapper > * {
-    opacity: 0;
-}
-
+/*assigning drop in animation to the jinchuriki header*/
 .jinchuriki.animate .jinchuriki__header {
     animation: var(--figure-drop-in);
 }
 
-.jinchuriki.animate .jinchuriki__container-wrapper > * {
-    --animate-order: 1;
-    --jinchuriki-delay: 350ms;
-    animation: var(--text-fade-in);
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration)
-    + var(--delay)
-    + var(--jinchuriki-delay) * var(--jinchuriki-order));
-}
-
+/*assigning animation order for each of the jinchuriki cards*/
 .jinchuriki.animate .character:nth-child(1) {
     --jinchuriki-order: 0;
-    animation-delay: var(--animation-order-delay);
 }
 
 .jinchuriki.animate .character:nth-child(2) {
     --jinchuriki-order: 1;
-    animation-delay: var(--animation-order-delay);
 }
 
 .jinchuriki.animate .character:nth-child(3) {
     --jinchuriki-order: 2;
+}
+
+/*assigning fade in animation for jinchuriki cards*/
+.jinchuriki.animate .jinchuriki__container-wrapper > * {
+    /*make sure the animation jinchuriki card right after the animation of the jinchuriki title*/
+    --animate-order: 1;
+    --jinchuriki-delay: 350ms;
+    animation: var(--text-fade-in);
+    /*calculate assigning the animation delay for each of the jinchuriki card*/
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration)
+    + var(--delay)
+    + var(--jinchuriki-delay) * var(--jinchuriki-order));
     animation-delay: var(--animation-order-delay);
 }
 
 /*=============================*/
-/*         jinchuriki section*/
+/*         shinobi war section*/
 /*=============================*/
 
+/*make the content of shinobi war section transparent before the animation is played*/
 .swar .swar__overlay > * {
     opacity: 0;
 }
 
-.swar.animate .swar__overlay > * {
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
-}
-
+/*assigning drop in animation to the shinobi war title*/
 .swar.animate .swar__title {
     --animate-order: 0;
     animation: var(--figure-drop-in);
-    animation-delay: var(--animation-order-delay);
 }
 
+/*assigning fade in animation to the shinobi war title*/
 .swar.animate .swar__description {
+    /*make sure the shinobi paragraph animation is animated after the shinobi title*/
     --animate-order: 1;
     animation: var(--text-fade-in);
+}
+
+.swar.animate .swar__overlay > * {
+    /*calculate and assigning the animation delay to the shinobi war section content*/
+    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
 }
