@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/ramen.css">
     <link rel="stylesheet" href="style/global.css">
+    <script defer src="ramenform.js"></script>
     <title>Ramen</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
 <main>
 
 
-    <form method="post" enctype="multipart/form-data" class="ramen-form">
+    <form method="post" enctype="multipart/form-data" class="ramen-form" id="form">
     <fieldset class="ramen-container">
         <h1 class="ramen-logo">Ramen ラーメン</h1>
         <ul class="ramen-type">
@@ -57,7 +58,6 @@
                 <input type="checkbox" class="ramen" value="Tonkotsu" id="r6">
             </li>
         </ul>
-        </div>
 
 
     </fieldset>
@@ -175,28 +175,44 @@
 
 
             </div>
-        </div>
         <fieldset class="information">
             <h1 class="infor-logo">Information インフォメーション</h1>
             <div class="input-info">
-            <label class="infor" for="i1">Contact Name:</label>
-            <input type="text" name="username" id="i1" class="info"/>
-
-            <label class="infor" for="i2">Contact number:</label>
-            <input type="tel" name="telNo" id="i2" class="info" size="20" maxlength="8"/>
-            </br>
-            <label class="infor" for="i3">Address:</label>
-            <input type="text" name="address" id="i3" class="info" size="50" />
-
-            <label class="infor" for="i4">E-mail:</label>
-            <input type="email" name="email" id="i4" class="info" size="25"/>
-            </br>
-            <label class="infor" for="i5">Note:</label>
-            </br>
-            <textarea name="note" id="i5" class="info" rows="4" cols="70" >Fill in the special request...</textarea>
+                <ul class="information-list">
+                    <li>
+                    <label class="infor" for="i1">Contact Name:</label>
+                    <input type="text" name="username" id="i1" class="info" />
+                    <div class="error-name"></div>
+                        </br>
+                    </li>
+                    <li>
+                    <label class="infor" for="i2">Contact number:</label>
+                    <input type="tel" name="telNo" id="i2" class="info" size="20" maxlength="8"  />
+                     <div class="error-number"></div>
+                        </br>
+                    </li>
+                    <li>
+                    <label class="infor" for="i3">Address:</label>
+                    <input type="text" name="address" id="i3" class="info" size="50" />
+                    <div class="error-address"></div>
+                        </br>
+                    </li>
+                    <li>
+                    <label class="infor" for="i4">E-mail:</label>
+                    <input type="email" name="email" id="i4" class="info" size="25" />
+                    <div class="error-email"></div>
+                        </br>
+                    </li>
+                    <li>
+                    <label class="infor" for="i5">Note:</label>
+                    </br>
+                    <textarea name="note" id="i5" class="info" rows="4" cols="70" >Fill in the special request...</textarea>
+                    </li>
+                </ul>
             </div>
         </fieldset>
-        <input type="submit" value="Submit" class="submit">
+        <input type="submit" class="submit" value="Sumbit">
+
         </form>
 
     </div>
