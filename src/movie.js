@@ -1,9 +1,11 @@
-const movies = [{
-    "name": "Naruto - Ninja Clash In The Land Of Snow",
-    "year": 2004,
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/de/Naruto_the_Movie_Ninja_Clash_in_the_Land_of_Snow.jpg",
-    "url": "https://naruto.fandom.com/wiki/Naruto_the_Movie:_Ninja_Clash_in_the_Land_of_Snow"
-},
+// json storing the movie information
+const movies = [
+    {
+        "name": "Naruto - Ninja Clash In The Land Of Snow",
+        "year": 2004,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/de/Naruto_the_Movie_Ninja_Clash_in_the_Land_of_Snow.jpg",
+        "url": "https://naruto.fandom.com/wiki/Naruto_the_Movie:_Ninja_Clash_in_the_Land_of_Snow"
+    },
     {
         "name": "Naruto - Legend Of The Stone Of Gelel",
         "year": 2005,
@@ -57,8 +59,10 @@ const movies = [{
         "year": 2014,
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0c/TheLastNarutomovie.jpg",
         "url": "https://naruto.fandom.com/wiki/The_Last:_Naruto_the_Movie"
-    }];
+    }
+];
 
+// using array map to generate the html tag for each of the movie stored in the movie json
 const movieHTML = movies.map(movie => {
     return `
             <div class="movie">
@@ -72,4 +76,5 @@ const movieHTML = movies.map(movie => {
 });
 
 const movieContainer = document.querySelector('.movies-container');
+// adding the movies html into the actual html of the page
 movieContainer.innerHTML = movieHTML.join("");
