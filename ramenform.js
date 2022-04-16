@@ -9,9 +9,7 @@ const errorNo=document.querySelector('.error-number')
 const errorAddress=document.querySelector('.error-address')
 const errorEmail=document.querySelector('.error-email')
 //re is the regex to check it have not "@"
-const re= /.+[@].+/;
-
-
+const re = /.+[@].+[.].+/;
 
 //add evenlistener to check the information when the user click submit button
 form.addEventListener('submit', (s) => {
@@ -106,6 +104,9 @@ name.addEventListener('blur', (e) =>{
 
 })
 
+function checkNull() {
+
+}
 number.addEventListener('blur', (e) =>{
     // if the form of contact number didn't type anything and
     //didn't match the length of number equal to 8
@@ -162,7 +163,7 @@ email.addEventListener('blur', (e) =>{
     //check email format xxx@xxx
     const ok=re.exec(email.value)
     if(!ok){
-        messagesEmail.push('Email is invalid')
+        messagesEmail.push('*Email is invalid')
     }
     if (messagesEmail.length >0){
         e.preventDefault()
