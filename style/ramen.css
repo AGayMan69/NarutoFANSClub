@@ -142,6 +142,7 @@ h1 {
     bottom: 0;
     border: 3px solid orange;
     position: fixed;
+    align-items: start;
     margin-top: 12vh;
     margin-right: 2vh;
     margin-bottom: 2vh;
@@ -239,7 +240,9 @@ h1 {
     padding-block: 0.5em;
     border-radius: 20px;
 }
-
+.error-address, .error-email, .error-name, .error-number{
+    color: firebrick;
+}
 
 input.submit {
     background: orangered;
