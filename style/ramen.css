@@ -39,6 +39,7 @@ input[type='checkbox']:hover {
 input[type='checkbox']:hover:checked,
 input[type='checkbox']:checked {
     background: orange;
+    color: black;
 }
 
 input[type='checkbox']:checked:after {
@@ -62,9 +63,9 @@ input[type='number']::-webkit-inner-spin-button {
     opacity: 1;
 }
 
-
-textarea, input[type='tel'], input[type='text'], input[type='email']{
-    border: 1px solid dimgrey;
+textarea, input[type='tel'], input[type='text'], input[type='email'] {
+    border: 0.2em solid dimgrey;
+    border-radius: 1em;
     padding: 0.5em;
 }
 ul{
@@ -84,7 +85,6 @@ ul{
 header {
     --background: var(--clr-header) !important;
 }
-
 
 h1 {
     text-transform: uppercase;
@@ -215,21 +215,28 @@ h1 {
     color: firebrick;
 }
 
-
 input.submit {
     background: orangered;
     color: white;
     border-radius: 10px;
+    border: orangered;
+    padding: 0.5em;
+    font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
 }
 
-.ramen-form{
+input.submit:hover {
+    background: #e03d00;
+}
+
+.ramen-form {
     width: 70vw;
 }
 
-@media only  screen and (max-width: 800px){
+@media only  screen and (max-width: 800px) {
     .ala-list {
-        grid-template-columns: repeat(auto-fit, minmax(12rem ,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     }
+
     .ala-list li {
         font-size: 1rem;
     }
