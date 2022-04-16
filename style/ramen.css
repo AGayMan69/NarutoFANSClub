@@ -21,7 +21,7 @@ body{
 input, textarea {
     background: white;
 }
-
+/*styling the input type of checkbox*/
 input[type='checkbox'] {
     display: inline-block;
     position: relative;
@@ -46,6 +46,7 @@ input[type='checkbox']:checked {
     color: black;
 }
 
+/*styling the input type of checkbox after selected*/
 input[type='checkbox']:checked:after {
     content: '\2714';
     position: absolute;
@@ -57,6 +58,7 @@ input[type='checkbox']:checked:after {
     transform: scale(0.7) translateX(10%);
 }
 
+/*styling the input type of number*/
 input[type='number'] {
     max-width: 6.5ch;
     padding: 0.5em;
@@ -64,11 +66,13 @@ input[type='number'] {
     border-radius: 0.5em;
 }
 
+/*show the button of the input type of number*/
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
     opacity: 1;
 }
 
+/*styling the textarea, the input type of tel, text and email*/
 textarea, input[type='tel'], input[type='text'], input[type='email'] {
     border: 0.2em solid dimgrey;
     border-radius: 1em;
@@ -79,7 +83,10 @@ ul {
     list-style: none;
 }
 
-
+/*====================================================================*/
+/*           orderlist section styling*/
+/*====================================================================*/
+/*styling the orderlist o*/
 .order-list {
     width: 100%;
 }
@@ -92,6 +99,7 @@ ul {
     font-weight: var(--fw-medium);
 }
 
+/*styling the item of order list*/
 .order-list .order li {
     display: flex;
     width: 100%;
@@ -101,6 +109,7 @@ ul {
     padding-block: 0.3em;
 }
 
+/*styling the total money*/
 .total-money {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -119,13 +128,15 @@ h1 {
     font-family: 'Carter One', serif;
     font-size: 3rem;
 }
-/*format the order list*/
+
+/*styling the order list*/
 .order{
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
 }
-/*set the font-size of the item name of the list*/
+
+/*set the font-size of the item name of the order list*/
 .item_name{
     font-size: 1rem;
 }
@@ -137,6 +148,7 @@ h1 {
     text-align: right;
 }
 
+/*styling the cart of orderlist*/
 .cart {
     display: flex;
     flex-direction: column;
@@ -155,6 +167,12 @@ h1 {
     padding: 1.5em;
     background: gainsboro;
 }
+
+/*====================================================================*/
+/*           ramen section styling*/
+/*====================================================================*/
+/*styling the outer of ramen type by grid*/
+/*arrange the ramen type*/
 .ramen-type {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -163,6 +181,7 @@ h1 {
     row-gap: 1em;
 }
 
+/*styling the inter of ramen type by flex container*/
 .ramen-type li {
     display: flex;
     flex-direction: column;
@@ -175,18 +194,22 @@ h1 {
     font-size: 1.5rem;
 }
 
+/*styling all the thing of the form*/
 .ramen-form{
     display: flex;
     flex-direction: column;
     margin-top: 12vh;
-    padding-left: 2em ;
+    padding-left: 2em;
     gap: 2em;
 }
 
-.ramen-image{
+/*styling the image of ramen*/
+.ramen-image {
     border-radius: 1em;
 }
-.ramen-container{
+
+/*styling the block of the ramen*/
+.ramen-container {
     padding: 0.5em;
     background: var(--clr-ramen);
     border-radius: 20px;
@@ -194,23 +217,30 @@ h1 {
     padding-block: 1em;
 }
 
-
+/*====================================================================*/
+/*           alacarte section styling*/
+/*====================================================================*/
+/*let ala drink and information block display grid*/
 .ala-list, .drink-list, .input-info {
     display: grid;
 }
 
-.alcarte{
+/*styling the block of alacarte*/
+.alcarte {
     background: var(--clr-alacarte);
     border-radius: 20px;
     padding-inline: 1em;
     padding-block: 1em;
 }
+
+/*styling the list of the alacarte*/
 .ala-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0.5em;
 }
 
+/*styling all the information of the alacarte*/
 .ala-list li {
     display: flex;
     padding-bottom: 1em;
@@ -219,17 +249,25 @@ h1 {
     font-size: 1.5rem;
 }
 
-.drink{
+/*====================================================================*/
+/*           drink section styling*/
+/*====================================================================*/
+/*styling the drink*/
+.drink {
     background: var(--clr-drink);
     border-radius: 20px;
     padding-inline: 1em;
     padding-block: 1em;
 }
+
+/*styling the list of the drink*/
 .drink-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /*padding: 0.5em;*/
 }
+
+/*styling all the things of the list of the drink*/
 .drink-list li {
     font-size: 1.5rem;
     padding-bottom: 1em;
@@ -237,19 +275,28 @@ h1 {
     align-items: center;
     gap: 0.5em;
 }
-.drink-info{
+
+.drink-info {
     color: var(--clr-drink-text);
 }
+
+/*====================================================================*/
+/*           information section styling*/
+/*====================================================================*/
+/*styling the block of information*/
 .information {
     background: var(--clr-information);
     padding-inline: 1em;
     padding-block: 0.5em;
     border-radius: 20px;
 }
-.error-address, .error-email, .error-name, .error-number{
+
+/*styling the error message*/
+.error-address, .error-email, .error-name, .error-number {
     color: firebrick;
 }
 
+/*styling the input type of submit*/
 input.submit {
     background: orangered;
     color: white;
@@ -297,8 +344,6 @@ input.submit:hover {
 
     }
     h1 {
-        text-transform: uppercase;
-        font-family: 'Carter One', serif;
         font-size: 1rem;
     }
     .ramen-form{
