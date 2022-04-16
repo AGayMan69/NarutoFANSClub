@@ -1,4 +1,5 @@
 :root {
+    /*custom property for theme color of each character section*/
     --clr-naruto: #B76A45;
     --clr-sasuke: #414151;
     --clr-kakashi: #A3948D;
@@ -6,6 +7,7 @@
     --clr-itachi: #322626;
 }
 
+/*styling the character container*/
 .character-container {
     display: flex;
     justify-content: space-around;
@@ -19,33 +21,30 @@
     height: 100vh;
 }
 
-.chakra-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
+/*styling the character name*/
 .character__title {
     font-size: 5rem;
     letter-spacing: 0.15ch;
     line-height: 1;
-    grid-column: 1/4;
 }
 
+/*styling the character japanese name*/
 .character__title > span {
     display: block;
     font-size: 0.3em;
     letter-spacing: normal;
 }
 
+/*styling the character voice*/
 .character__cv {
     font-size: 2.5rem;
     margin-top: 0.9em;
     padding: 0.2em;
     display: inline-block;
     background: var(--clr-global-black);
-    grid-column: 1/4;
 }
 
+/*styling the character description*/
 .character__description {
     width: 100%;
     min-width: unset;
@@ -53,26 +52,30 @@
 }
 
 .character__pics {
+    /*forcing the image aspect ratio*/
     aspect-ratio: 8/19;
-    grid-column: 5/6;
     order: 2;
     width: 30vw;
+    /*prevent character image being crop*/
     object-fit: scale-down;
     filter: drop-shadow(0.4em 1em 0.2em rgba(0, 0, 0, 0.5));
 }
 
+/*styling the image gallery*/
 .character__image-container {
     display: flex;
     gap: 9%;
-    grid-column: 1/4;
 }
 
+/*styling the image of the image gallery*/
 .character__image-container img {
+    /*forcing the aspect ratio of the image*/
     aspect-ratio: 16/9;
     border: 0.1em solid var(--clr-global-white);
     box-shadow: 0.1em 0.1em 0.5em black;
 }
 
+/*assigning theme color the each of the character section*/
 .character-container.naruto {
     --clr-background: var(--clr-naruto);
 }
@@ -93,6 +96,8 @@
     --clr-background: var(--clr-itachi);
 }
 
+/*placing the dot navigation in the right middle of the screem*/
+/*styling the dot navigation*/
 .dotnav-container {
     display: flex;
     flex-direction: column;
@@ -104,19 +109,23 @@
     gap: 2em;
 }
 
+/*styling each of the link of the dot navigation*/
 .dotnav-container .dotnav-link {
     aspect-ratio: 1;
     width: 2.3rem;
     background: #BBBBBB;
     border-radius: 100%;
+    /*adjust the hover animation timing*/
     transition: 250ms transform cubic-bezier(.17, .67, .31, 1.55);
 }
 
+/*adding hovering effect for the hovered dot navigation links*/
 .dotnav-container a:hover {
     background: var(--clr-global-white);
     transform: scale(1.1);
 }
 
+/*adding hovering effect for the selected dot navigation links*/
 .dotnav-container .dotnav-link.selected {
     background: var(--clr-global-white);
     transform: scale(1.3);
@@ -129,10 +138,12 @@
 
 @media only screen and (max-width: 1024px) {
 
+    /*hide the character picture for small screen*/
     .character__pics {
         display: none;
     }
 
+    /*switch the dot navigation orientation*/
     .dotnav-container {
         flex-direction: row;
         inset: unset;
@@ -141,6 +152,7 @@
         transform: translateX(-50%);
     }
 
+    /*make the dot navigation link smaller*/
     .dotnav-container .dotnav-link {
         width: 1.5rem;
     }
@@ -150,29 +162,38 @@
 /*           character animation */
 /*====================================================================*/
 
+/*hide the content of the character before starting the animation*/
 .character__pics,
 .character-wrapper > * {
     opacity: 0;
 }
 
-
-.character-container.animate .character-wrapper > *:not(h1) {
-    --animate-order: 1;
-    animation: var(--text-fade-in);
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
-    animation-delay: var(--animation-order-delay);
-}
-
+/*assigning drop in animation to the character name*/
 .character-container.animate .character__title {
+    /*let character name start the animation first*/
     --animate-order: 0;
     animation: var(--figure-drop-in);
-    --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
-    animation-delay: var(--animation-order-delay);
 }
 
+/*assigning fade in animation for the character article and image gallery*/
+.character-container.animate .character-wrapper > *:not(h1) {
+    /*let the character article and image gallery start right after the character name finished it's animation*/
+    --animate-order: 1;
+    animation: var(--text-fade-in);
+}
+
+/*assigning slide in animation for the character picture*/
 .character-container.animate .character__pics {
+    /*let the character image start after all the animation is played*/
     --animate-order: 2;
     animation: var(--image-slide-in);
+}
+
+/*assigning animation delay to the content of the character section*/
+.character-container.animate .character__pics,
+.character-container.animate .character-wrapper > *,
+.character-container.animate .character-wrapper > *:not(h1) {
+    /*calculate the delay for each pieces of the character section*/
     --animation-order-delay: calc(var(--animate-order) * var(--animation-duration) + var(--delay));
     animation-delay: var(--animation-order-delay);
 }

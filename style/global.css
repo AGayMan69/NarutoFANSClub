@@ -1,4 +1,5 @@
 :root {
+    /*custom property for that will use across the project*/
     --clr-global-orange: #DF4732;
     --clr-global-orange-rgb: 223 71 50;
     --clr-global-white-rgb: 255 255 255;
@@ -17,33 +18,30 @@
     --clr-global-white: #FFFFFF;
     --clr-hamburger-black: rgba(0, 0, 0, 0.95);
 
+    /*font family*/
     --ff-global: "Inter", sans-serif;
     --ff-logo: 'Carter One', cursive;
 
+    /*font weight*/
     --fw-medium: 500;
     --fw-bold-semi: 600;
     --fw-bold: 700;
     --fw-light: 300;
 
+    /*font-size: */
     --fs-normal: 1.5rem;
     --fs-small: 1.25rem;
 
     --fclr-header: var(--clr-global-white);
     --bstyle: 1px solid var(--clr-global-grey);
 
+    /*font weight for heading 1 and text*/
     --fw-h1: var(--fw-bold);
     --fw-text: var(--fw-light);
 }
 
-/*!**/
-/*    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property*/
-/*    - The "symbol *" part is to solve Firefox SVG sprite bug*/
-/* *!*/
-/**:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {*/
-/*    all: unset;*/
-/*    display: revert;*/
-/*}*/
-input[type="checkbox"], input {
+/*disable the default style of the checkbox*/
+input[type="checkbox"] {
     appearance: none;
 }
 
@@ -61,10 +59,12 @@ ol, ul, menu {
     list-style: none;
 }
 
+/*set the default font to inter*/
 html {
     font-family: var(--ff-global);
 }
 
+/*remove field set border*/
 fieldset {
     border: none;
 }
@@ -86,6 +86,7 @@ a {
     display: inline-block;
 }
 
+/*css trick to make the paragraph fit its parent's width*/
 p {
     width: 0;
     min-width: 100%;
@@ -103,6 +104,7 @@ h1 {
     font-weight: var(--fw-h1);
 }
 
+/*style for navigation bar*/
 header {
     --text: var(--clr-global-white);
     --svg: invert(100%) sepia(3%) saturate(0%) hue-rotate(259deg) brightness(104%) contrast(100%);
@@ -113,6 +115,7 @@ header {
 /*            global animation*/
 /*====================================================================*/
 
+/*fade in animation use across the project*/
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -125,6 +128,7 @@ header {
     }
 }
 
+/*drop in animation use across the project*/
 @keyframes dropIn {
     0% {
         opacity: 0;
@@ -137,6 +141,7 @@ header {
     }
 }
 
+/*slide in animation use across the project*/
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -149,6 +154,7 @@ header {
     }
 }
 
+/*global setting for the animation*/
 main {
     --animation-duration: 500ms;
     --delay: 50ms;
@@ -161,8 +167,10 @@ main {
 /*            navbar styling*/
 /*====================================================================*/
 
+/*navbar container styling*/
 .nav-container {
     display: flex;
+    /*make the navbar appear on top of the screen*/
     position: fixed;
     top: 0;
     justify-content: space-between;
@@ -175,17 +183,21 @@ main {
 .logo {
     display: flex;
     justify-items: flex-end;
+    /*make the logo grow with the screen*/
     font-size: clamp(1rem, 3vw + 0.5rem, 3rem);
     cursor: pointer;
 }
 
+/*styling logo image*/
 .logo__image {
     object-fit: fill;
+    /*let the svg grow with the logo container font size*/
     max-width: 1em;
     height: auto;
     filter: var(--svg);
 }
 
+/*styling the logo text*/
 .logo__text {
     font-family: 'Carter One', serif;
     text-transform: uppercase;
@@ -193,6 +205,7 @@ main {
     color: var(--text);
 }
 
+/*turn the logo into orange if hover*/
 .logo:hover .logo__image {
     filter: invert(34%) sepia(50%) saturate(3516%) hue-rotate(346deg) brightness(94%) contrast(86%);
 }
@@ -201,16 +214,7 @@ main {
     color: var(--clr-global-orange);
 }
 
-.logo > a > span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-    z-index: 1;
-}
-
+/*aligning the navigation links*/
 .nav__links {
     display: flex;
     align-items: center;
@@ -218,6 +222,7 @@ main {
     gap: 1em;
 }
 
+/*styling the navigation link*/
 .nav__link {
     color: var(--text);
     font-size: 1.5em;
@@ -228,23 +233,26 @@ main {
     padding-block: 0.5em;
 }
 
+/*turn the navigation link orange when hover*/
 .nav__links li:hover .nav__link {
     color: var(--clr-global-orange);
 }
 
+/*hide the hamburger menu icon*/
 .hamburger-toggle {
     display: none;
 }
 
+/*non transparent navigation bar style*/
 header.scrolled {
     --text: var(--clr-global-black);
     --svg: none;
     --background: var(--clr-global-white);
-
 }
 
 @media not screen and (max-width: 840px) {
 
+    /*navigation link hovering effect*/
     .nav__links li::before {
         position: absolute;
         content: '';
@@ -262,20 +270,22 @@ header.scrolled {
     }
 }
 
+/*the navigation menu will switch to hamburger menu at this point*/
 @media only screen and (max-width: 840px) {
+    /*changing the navigation bar color*/
     header {
         --text: var(--clr-global-black) !important;
         --background: var(--clr-global-white) !important;
         --svg: invert(0%) sepia(0%) saturate(0%) hue-rotate(338deg) brightness(104%) contrast(108%);;
     }
 
+    /*switching into hamburger menu*/
     .nav-container {
         display: block;
-        top: 0;
         padding: 0;
-        background: none;
     }
 
+    /*readjust the icon according to the hamburger menu*/
     .logo {
         justify-content: center;
         display: flex;
@@ -285,10 +295,12 @@ header.scrolled {
         position: relative;
     }
 
+    /*add border when opening the hamburger menu*/
     .logo.active {
         border-bottom: var(--bstyle);
     }
 
+    /*re-adjust the nav link with the hamburger menu*/
     .nav__links {
         position: absolute;
         flex-direction: column;
@@ -298,6 +310,7 @@ header.scrolled {
         padding-bottom: 3rem;
         top: -24em;
         background: var(--clr-global-white);
+        /*drop down animation timing*/
         transition: transform 400ms cubic-bezier(.22, .61, .36, 1) 200ms;
         z-index: -1;
     }
@@ -312,16 +325,19 @@ header.scrolled {
     }
 
 
+    /*activate the animation when the navigation link expand*/
     .nav__links.active {
         transform: translateY(100%);
         transition: transform 400ms cubic-bezier(.22, .61, .36, 1);
     }
 
+    /*activate the animation when the navigation link expand*/
     .nav__links.active .nav__link {
         opacity: 1;
         transition: 400ms opacity ease-in 100ms;
     }
 
+    /*styling the hamburger menu icon*/
     button.hamburger-toggle {
         display: block;
         position: absolute;
@@ -334,7 +350,7 @@ header.scrolled {
         filter: var(--svg);
     }
 
-
+    /*switch to close icon the hamburger menu is expanded*/
     button.hamburger-toggle.active > img {
         content: url("../asset/hamburger_close.svg");
     }

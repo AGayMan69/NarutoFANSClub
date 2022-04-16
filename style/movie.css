@@ -1,17 +1,20 @@
-/*header {*/
-/*transform: translateY(-100%);*/
-/*}*/
+/*styling the movies container*/
 .movies-container {
+    /*creating a repeating background*/
     background: url("../asset/movie/tile_background.png");
     background-size: 5%;
     position: relative;
+    /*css grid auto fill the movie cards*/
     display: grid;
+    /*move the movie cards into next row, if can't fit the movie with a minimum width of 240px*/
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    /*adding gap between the movie cards*/
     gap: 6vh min(10rem, 20%);
     padding-top: 20vh;
     padding-inline: 13vw;
 }
 
+/*darken the page background*/
 .movies-container::before {
     content: "";
     background: rgba(0, 0, 0, 0.85);
@@ -25,27 +28,32 @@
     width: 100%;
 }
 
+/*styling the movie link*/
 .movie__link {
     width: inherit;
     box-shadow: 0.5em 1em 0.6em black;
     --image-ratio: 2/3;
 }
 
+/*adding the movie link overlay*/
 .movie__link::before {
     content: '';
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
     opacity: 0;
+    /*forcing the aspect ratio and size to be the same as the movie image*/
     left: 0;
     right: 0;
     aspect-ratio: var(--image-ratio);
     transition: 200ms opacity ease-in-out;
 }
 
+/*forcing the movie image aspect ratio*/
 .movie__image {
     aspect-ratio: var(--image-ratio);
 }
 
+/*styling the movie title*/
 .movie__title {
     font-size: 1.5rem;
     font-weight: var(--fw-bold-semi);
@@ -53,12 +61,14 @@
     margin-block: 0.5em;
 }
 
+/*styling the movie year*/
 .movie__year {
     font-size: 1.3rem;
     color: var(--clr-global-grey);
     font-weight: var(--fw-medium);
 }
 
+/*adding the movie link hovering effect*/
 .movie__link:hover::before {
     opacity: 1;
 }

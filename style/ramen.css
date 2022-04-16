@@ -58,8 +58,10 @@ input[type='checkbox']:checked:after {
 }
 
 input[type='number'] {
+    max-width: 6.5ch;
+    padding: 0.5em;
     border: 0.5px solid grey;
-    max-width: 3.5ch;
+    border-radius: 0.5em;
 }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -72,26 +74,41 @@ textarea, input[type='tel'], input[type='text'], input[type='email'] {
     border-radius: 1em;
     padding: 0.5em;
 }
-ul{
+
+ul {
     list-style: none;
 }
-/*====================================================================*/
-/*            section styling*/
-/*====================================================================*/
 
-/*=============================*/
-/*        orderlist section*/
-/*=============================*/
-.order-list{
+
+.order-list {
     width: 100%;
 }
-.order-list .order li{
+
+.order-list__heading {
+    font-size: clamp(1.3rem, 2vw + 0.2rem, 2rem);
+}
+
+.order .item_name {
+    font-weight: var(--fw-medium);
+}
+
+.order-list .order li {
     display: flex;
     width: 100%;
-    justify-content:space-between ;
+    justify-content: flex-start;
+    gap: 0.4em;
     align-items: center;
-    padding-block: 0.3em ;
+    padding-block: 0.3em;
 }
+
+.total-money {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-global-darkbrown);
+    text-align: right;
+}
+
 
 header {
     --background: var(--clr-header) !important;
@@ -112,11 +129,19 @@ h1 {
 .item_name{
     font-size: 1rem;
 }
-/*format the list of choice to right*/
-.cart{
+
+.item_subtotal {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold-semi);
+    flex-grow: 1;
+    text-align: right;
+}
+
+.cart {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: stretch;
     right: 0;
     top: 0;
     bottom: 0;
@@ -148,7 +173,7 @@ h1 {
     padding: 1em;
     border: 1px solid orange;
     border-radius: 1em;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .ramen-form{
@@ -192,7 +217,7 @@ h1 {
     padding-bottom: 1em;
     align-items: center;
     gap: 0.5em;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .drink{
