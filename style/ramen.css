@@ -91,15 +91,17 @@ h1 {
     font-family: 'Carter One', serif;
     font-size: 3rem;
 }
-
+/*format the order list*/
 .order{
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
 }
+/*set the font-size of the item name of the list*/
 .item_name{
     font-size: 1rem;
 }
+/*format the list of choice to right*/
 .cart{
     display: flex;
     flex-direction: column;
@@ -135,17 +137,7 @@ h1 {
     padding: 1em;
     border: 1px solid orange;
     border-radius: 1em;
-    font-size: 2rem;
-}
-.spicy-type{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
-    padding: 0.5em;
-    border: 1px solid orangered;
-    border-radius: 1em;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .ramen-form{
@@ -189,7 +181,7 @@ h1 {
     padding-bottom: 1em;
     align-items: center;
     gap: 0.5em;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .drink{
