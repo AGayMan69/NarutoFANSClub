@@ -214,5 +214,5 @@ function caculateTotal() {
     const calCost = orderList.reduce((total, item) => {
         return total + parseInt(item.price)
     }, 0)
-    total.innerHTML = `Total $HKD: ${calCost}`
+    total.innerHTML = `Total:  $${calCost}`
 }
