@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
@@ -58,16 +58,15 @@
                 <input type="checkbox" class="ramen" value="Tonkotsu" id="r6">
             </li>
         </ul>
-        <div class="spicy-type">
-        <div class="spicy">Please select the spiciness 🔥: </div>
-            <select>
+        <br class="ramen-spicy">
+        Please select the spiciness 🔥:
+        <select >
             <option value="S">Slightly Spicy</option>
             <option value="L">Little Spicy</option>
             <option value="M">Medium Spicy</option>
             <option value="V">Super Spicy</option>
-            </select>
-        </div>
-
+        </select>
+        </br>
 
 
     </fieldset>
@@ -193,39 +192,40 @@
                     <label class="infor" for="i1">Contact Name:</label>
                     <input type="text" name="username" id="i1" class="info" />
                     <div class="error-name"></div>
-                        <br>
+                        </br>
                     </li>
                     <li>
                     <label class="infor" for="i2">Contact number:</label>
                     <input type="tel" name="telNo" id="i2" class="info" size="20" maxlength="8"  />
                      <div class="error-number"></div>
-                        <br>
+                        </br>
                     </li>
                     <li>
                     <label class="infor" for="i3">Address:</label>
                     <input type="text" name="address" id="i3" class="info" size="50" />
                     <div class="error-address"></div>
-                        <br>
+                        </br>
                     </li>
                     <li>
                     <label class="infor" for="i4">E-mail:</label>
                     <input type="email" name="email" id="i4" class="info" size="25" />
+                         <i cla></i>
                     <div class="error-email"></div>
-                        <br>
+                        </br>
                     </li>
                     <li>
                     <label class="infor" for="i5">Note:</label>
-                    <br>
+                    </br>
                     <textarea name="note" id="i5" class="info" rows="4" cols="70" >Fill in the special request...</textarea>
                     </li>
                 </ul>
             </div>
         </fieldset>
-        <input type="submit" class="submit" value="Sumbit">
+        <button type="submit" class="submit">Submit</button>
 
         </form>
 
-
+    </div>
 </main>
 
 
