@@ -107,6 +107,7 @@ h1 {
     column-gap: 5%;
     row-gap: 1em;
 }
+
 .ramen-type li {
     display: flex;
     flex-direction: column;
@@ -118,6 +119,13 @@ h1 {
     border-radius: 1em;
     font-size: 2rem;
 }
+.ramen-spicy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
 .ramen-form{
     display: flex;
     flex-direction: column;
@@ -189,7 +197,9 @@ h1 {
     padding-block: 0.5em;
     border-radius: 20px;
 }
-
+.error-address, .error-email, .error-name, .error-number{
+    color: firebrick;
+}
 
 
 input.submit {
