@@ -31,32 +31,38 @@
 
 
     <form method="post" enctype="multipart/form-data" class="ramen-form" id="form" novalidate>
-    <fieldset class="ramen-container">
-        <h1 class="ramen-logo">Ramen ラーメン</h1>
-        <ul class="ramen-type">
-            <li><img src="./asset/ramen/Hakata%20Ramen.png" alt="" class="ramen-image">
-                <label class="ramen-info" for="r1">Hakata Ramen   $HKD 79</label>
-                <input type="checkbox" class="ramen" value="Hakata" id="r1" data-name="Hakata Ramen" data-price="79" >
-            </li>
-            <li><img src="./asset/ramen/Miso%20Ramen.png" alt="" class="ramen-image">
-                <label class="ramen-info" for="r2">Miso Ramen  $HKD59</label>
-                    <input type="checkbox" class="ramen" value="Miso" id="r2" data-name="Miso Ramen" data-price="59">
+        <fieldset class="ramen-container">
+            <h1 class="ramen-logo">Ramen ラーメン</h1>
+            <ul class="ramen-type">
+                <li><img src="./asset/ramen/Hakata%20Ramen.png" alt="" class="ramen-image">
+                    <label class="ramen-info" for="r1">Hakata Ramen $HKD 79</label>
+                    <input type="checkbox" class="ramen" value="Hakata" id="r1" data-name="Hakata Ramen" data-price="79"
+                           name="ramenInfo">
+                </li>
+                <li><img src="./asset/ramen/Miso%20Ramen.png" alt="" class="ramen-image">
+                    <label class="ramen-info" for="r2">Miso Ramen $HKD59</label>
+                    <input type="checkbox" class="ramen" value="Miso" id="r2" data-name="Miso Ramen" data-price="59"
+                           name="ramenInfo">
             </li>
             <li><img src="./asset/ramen/Sauce%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r3">Sauce Ramen  $HKD65</label>
-                <input type="checkbox" class="ramen" value="Sauce" id="r3" data-name="Sauce Ramen" data-price="65">
+                <input type="checkbox" class="ramen" value="Sauce" id="r3" data-name="Sauce Ramen" data-price="65"
+                       name="ramenInfo">
             </li>
             <li><img src="./asset/ramen/Shio%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r4">Shio Ramen  $HKD59</label>
-                <input type="checkbox" class="ramen" value="Shio" id="r4" data-name="Shio Ramen" data-price="59">
+                <input type="checkbox" class="ramen" value="Shio" id="r4" data-name="Shio Ramen" data-price="59"
+                       name="ramenInfo">
             </li>
             <li><img src="./asset/ramen/Super%20Spicy%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r5">Mystery Spicy Ramen  $HKD79</label>
-                <input type="checkbox" class="ramen" value="Spicy" id="r5" data-name="Mystery Spicy Ramen" data-price="79">
+                <input type="checkbox" class="ramen" value="Spicy" id="r5" data-name="Mystery Spicy Ramen"
+                       data-price="79" name="ramenInfo">
             </li>
             <li><img src="./asset/ramen/Tonkotsu%20Ramen.png" alt="" class="ramen-image">
                 <label class="ramen-info" for="r6">Tonkotsu Ramen  $HKD65</label>
-                <input type="checkbox" class="ramen" value="Tonkotsu" id="r6" data-name="Tonkotsu Ramen" data-price="65">
+                <input type="checkbox" class="ramen" value="Tonkotsu" id="r6" data-name="Tonkotsu Ramen" data-price="65"
+                       name="ramenInfo">
             </li>
         </ul>
     </fieldset>
@@ -153,22 +159,7 @@
                 <h1 class="order-list__heading">Order-List:</h1>
 
                 <ul class="order">
-                    <li><input type="number" value="1" min="1" max="10">
-                        <span class="item_name">Handmade Japanese Fried Chicken</span>
-                        <span class="item_subtotal">$99 </span>
-                    </li>
-                    <li><input type="number" value="1" min="1" max="10">
-                        <span class="item_name">cola</span>
-                        <span class="item_subtotal">$99 </span>
-                    </li>
-                        <li><input type="number" value="1" min="1" max="10">
-                            <span class="item_name">cola</span>
-                            <span class="item_subtotal">$99 </span>
-                        </li>
-                        <li><input type="number" value="1" min="1" max="10">
-                            <span class="item_name">cola</span>
-                            <span class="item_subtotal">$99 </span>
-                        </li>
+
                     </ul>
             </div>
             <div class="Tableware">
@@ -188,27 +179,27 @@
                     <ul class="information-list">
                         <li>
                             <label class="infor" for="i1">Contact Name:</label>
-                            <input type="text" name="username" id="i1" class="info"/>
-                            <div class="error-name"></div>
+                            <input type="text" name="username" id="i1" class="info" data-type="Contact Name"/>
+                            <div class="error" data-type="Contact Name"></div>
                             <br>
                         </li>
                         <li>
                             <label class="infor" for="i2">Contact number:</label>
-                            <input type="tel" name="telNo" id="i2" class="info" size="20" maxlength="8"/>
-                            <div class="error-number"></div>
+                            <input type="tel" name="telNo" id="i2" class="info" size="20" maxlength="8"
+                                   data-type="Contact Number"/>
+                            <div class="error" data-type="Contact Number"></div>
                             <br>
                         </li>
                         <li>
                             <label class="infor" for="i3">Address:</label>
-                            <input type="text" name="address" id="i3" class="info" size="50"/>
-                            <div class="error-address"></div>
+                            <input type="text" name="address" id="i3" class="info" size="50" data-type="Address"/>
+                            <div class="error" data-type="Address"></div>
                             <br>
                         </li>
                         <li>
                             <label class="infor" for="i4">E-mail:</label>
-                            <input type="email" name="email" id="i4" class="info" size="25"/>
-                            <i cla></i>
-                            <div class="error-email"></div>
+                            <input type="email" name="email" id="i4" class="info" size="25" data-type="Email"/>
+                            <div class="error" data-type="Email"></div>
                             <br>
                         </li>
                         <li>
