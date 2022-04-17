@@ -292,7 +292,7 @@ h1 {
 }
 
 /*styling the error message*/
-.error-address, .error-email, .error-name, .error-number {
+.error {
     color: firebrick;
 }
 
