@@ -6,21 +6,24 @@
     --clr-ramenbackground: #E8DCAC;
     --clr-ramen: #F5E4C0;
     --clr-alacarte: #F0E5CF;
-    --clr-alacarte-text: #DC5D31 ;
+    --clr-alacarte-text: #DC5D31;
     --clr-drink: #E3F3E3;
     --clr-drink-text: #002140;
     --clr-money: #EDE9D0;
-    --clr-header:   #F0E5CF;
+    --clr-header: #F0E5CF;
     --clr-information: #C0A48B;
 }
 
-body{
+body {
     background: var(--clr-ramenbackground);
 }
 
-input, textarea {
-    background: white;
+/*set the width of container for the different type of food*/
+.ramen-form {
+    width: 70vw;
 }
+
+
 /*styling the input type of checkbox*/
 input[type='checkbox'] {
     display: inline-block;
@@ -34,12 +37,13 @@ input[type='checkbox'] {
     max-width: 1em;
 }
 
-
+/*styling the input type of checkbox when it hover*/
 input[type='checkbox']:hover {
     background: #f0f0f0;
     color: #f0f0f0;
 }
 
+/*styling the input type of checkbox when it checked*/
 input[type='checkbox']:hover:checked,
 input[type='checkbox']:checked {
     background: orange;
@@ -84,71 +88,9 @@ ul {
 }
 
 /*====================================================================*/
-/*           orderlist section styling*/
+/*           cart section styling*/
 /*====================================================================*/
-/*styling the orderlist o*/
-.order-list {
-    width: 100%;
-}
-
-.order-list__heading {
-    font-size: clamp(1.3rem, 2vw + 0.2rem, 2rem);
-}
-
-.order .item_name {
-    font-weight: var(--fw-medium);
-}
-
-/*styling the item of order list*/
-.order-list .order li {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 0.4em;
-    align-items: center;
-    padding-block: 0.3em;
-}
-
-/*styling the total money*/
-.total-money {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    font-weight: var(--fw-bold);
-    color: var(--clr-global-darkbrown);
-    text-align: right;
-}
-
-
-header {
-    --background: var(--clr-header) !important;
-}
-
-h1 {
-    text-transform: uppercase;
-    font-family: 'Carter One', serif;
-    font-size: 3rem;
-}
-
-/*styling the order list*/
-.order{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-}
-
-/*set the font-size of the item name of the order list*/
-.item_name{
-    font-size: 1rem;
-}
-
-.item_subtotal {
-    font-size: 1.2rem;
-    font-weight: var(--fw-bold-semi);
-    flex-grow: 1;
-    text-align: right;
-}
-
-/*styling the cart of orderlist*/
+/*styling the cart of order list and total money*/
 .cart {
     display: flex;
     flex-direction: column;
@@ -167,6 +109,62 @@ h1 {
     padding: 1.5em;
     background: gainsboro;
 }
+
+/*styling the order list */
+.order-list {
+    width: 100%;
+}
+
+/*styling the heading of order list */
+.order-list__heading {
+    font-size: clamp(1.3rem, 2vw + 0.2rem, 2rem);
+}
+
+/*styling the item of order list*/
+.order-list .order li {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.4em;
+    align-items: center;
+    padding-block: 0.3em;
+}
+
+/*styling the font-size of the item name of the order list*/
+.item_name {
+    font-size: 1rem;
+}
+
+/*styling the money of different order*/
+.item_subtotal {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold-semi);
+    flex-grow: 1;
+    text-align: right;
+}
+
+/*styling the total money*/
+.total-money {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-global-darkbrown);
+    text-align: right;
+}
+
+
+header {
+    --background: var(--clr-header) !important;
+}
+
+/*all the header of the ramen form*/
+h1 {
+    text-transform: uppercase;
+    font-family: 'Carter One', serif;
+    font-size: 3rem;
+}
+
+
 
 /*====================================================================*/
 /*           ramen section styling*/
@@ -220,11 +218,6 @@ h1 {
 /*====================================================================*/
 /*           alacarte section styling*/
 /*====================================================================*/
-/*let ala drink and information block display grid*/
-.ala-list, .drink-list, .input-info {
-    display: grid;
-}
-
 /*styling the block of alacarte*/
 .alcarte {
     background: var(--clr-alacarte);
@@ -252,7 +245,7 @@ h1 {
 /*====================================================================*/
 /*           drink section styling*/
 /*====================================================================*/
-/*styling the drink*/
+/*styling the block of the drink*/
 .drink {
     background: var(--clr-drink);
     border-radius: 20px;
@@ -276,6 +269,7 @@ h1 {
     gap: 0.5em;
 }
 
+/*styling the text of the drink*/
 .drink-info {
     color: var(--clr-drink-text);
 }
@@ -306,19 +300,15 @@ input.submit {
     font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
 }
 
+/*styling the input type of submit when it hover*/
 input.submit:hover {
     background: #e03d00;
-}
-
-.ramen-form {
-    width: 70vw;
 }
 
 @media only  screen and (max-width: 800px) {
     .ala-list {
         grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     }
-
     .ala-list li {
         font-size: 1rem;
     }
@@ -336,6 +326,7 @@ input.submit:hover {
     }
 }
 
+/*change the position of the cart ,header size and the size of ramen form*/
 @media only  screen and (max-width: 1200px) {
     .cart{
         position: relative;
