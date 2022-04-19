@@ -65,12 +65,16 @@
 .character__image-container {
     display: flex;
     gap: 9%;
+    width: 100%;
 }
 
 /*styling the image of the image gallery*/
 .character__image-container img {
     /*forcing the aspect ratio of the image*/
+    flex-basis: 0;
+    flex-shrink: 1;
     aspect-ratio: 16/9;
+    width: auto;
     border: 0.1em solid var(--clr-global-white);
     box-shadow: 0.1em 0.1em 0.5em black;
 }
